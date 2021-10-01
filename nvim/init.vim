@@ -92,6 +92,9 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <leader><tab> :tabn<CR>
 nnoremap <leader><S-Tab> :tabp<CR>
 
+" copypaste
+noremap <Leader>p "+p
+
 " compoe 
 let g:compe = {}
 let g:compe.enabled = v:true
