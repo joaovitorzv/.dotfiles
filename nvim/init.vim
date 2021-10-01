@@ -94,8 +94,9 @@ nnoremap <leader><S-Tab> :tabp<CR>
 
 " copypaste
 noremap <Leader>p "+p
+noremap <Leader>y "+y
 
-" compoe 
+"compoe 
 let g:compe = {}
 let g:compe.enabled = v:true
 let g:compe.autocomplete = v:true
