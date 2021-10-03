@@ -105,3 +105,9 @@ noremap <Leader>y "+y
 " find
 nnoremap <leader>f :FZF<CR> 
 nnoremap <silent> <leader>pf :Files %:p:h<CR>
+
+" COC----------k?
+inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
