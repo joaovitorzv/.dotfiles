@@ -5,6 +5,7 @@ set shiftwidth=2
 set expandtab 
 set smartindent
 
+set hidden
 set exrc
 set guicursor=
 set relativenumber
