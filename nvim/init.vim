@@ -26,7 +26,7 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
 " useful plugins
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
