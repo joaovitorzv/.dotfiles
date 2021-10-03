@@ -24,6 +24,7 @@ alias sudo="sudo "
 alias py="python3"
 alias push="git push"
 alias v="nvim"
+alias install="sudo apt-get install "
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
