@@ -115,7 +115,8 @@ nnoremap <leader>f :FZF<CR>
 nnoremap <silent> <leader>pf :Files %:p:h<CR>
 
 " COC----------k?
-inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
