@@ -12,6 +12,7 @@ exec redshift
 exec alsactl --file ~/.config/asound.state restore
 exec --no-startup-id  ~/.config/polybar/launch.sh --forest
 exec gitwatch -r origin -b main -m 'gitwatch got something for us' ~/dotfiles
+exec compton
 
 # window title
 title_align center
