@@ -26,7 +26,7 @@ hide_edge_borders both
 exec xset led 3
 
 # background 
-exec --no-startup-id nitrogen --set-zoom-fill Pictures/Wallpapers/the.jpg --head=0
+exec --no-startup-id nitrogen --set-zoom-fill Pictures/Wallpapers --head=0 --random --sort='rtime'
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #1c1929 #090712 #ffffff #2e9ef4   #120c2e
