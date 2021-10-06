@@ -1,0 +1,10 @@
+{
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "jsx",
+    "tsx"
+  ]
+}
