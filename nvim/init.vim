@@ -114,7 +114,10 @@ noremap <Leader>y "+y
 nnoremap <leader>f :FZF<CR> 
 nnoremap <silent> <leader>pf :Files %:p:h<CR>
 
-" COC----------k?
+" save 
+nnoremap <leader>s :w <CR>
+
+" COC...k?
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
