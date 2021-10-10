@@ -112,8 +112,10 @@ noremap <Leader>y "+y
 nnoremap <leader>f :FZF<CR> 
 nnoremap <silent> <leader>pf :Files %:p:h<CR>
 
-" save 
+" utils  
 nnoremap <leader>s :w <CR>
+nnoremap <leader>q :wq <CR>
+
 
 " COC...k?
 if has('nvim')
