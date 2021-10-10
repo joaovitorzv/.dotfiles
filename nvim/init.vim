@@ -34,7 +34,7 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 
