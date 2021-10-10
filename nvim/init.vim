@@ -72,8 +72,6 @@ set background=dark
 colorscheme gruvbox 
 let g:airline_theme='gruvbox'
 
-nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()
-
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
