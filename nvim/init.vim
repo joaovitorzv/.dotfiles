@@ -53,7 +53,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " syntax highlight
 Plug 'HerringtonDarkholme/yats.vims'
-Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 
 "fzf
