@@ -37,6 +37,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
 
 "
 " useful plugins
