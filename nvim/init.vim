@@ -73,11 +73,6 @@ colorscheme gruvbox
 
 let g:airline_theme='gruvbox'
 
-augroup SyntaxSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=javascript
-augroup END
-
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
