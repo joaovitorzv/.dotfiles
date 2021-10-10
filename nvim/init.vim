@@ -68,6 +68,7 @@ call plug#end()
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme
+set background=dark
 colorscheme gruvbox 
 
 " transparent bg
