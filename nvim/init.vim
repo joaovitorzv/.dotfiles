@@ -57,7 +57,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 "Plug 'pangloss/vim-javascript'
-
+Plug 'vieira/vim-javascript'
 
 
 "fzf
