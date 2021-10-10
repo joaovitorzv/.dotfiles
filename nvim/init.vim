@@ -71,7 +71,6 @@ set rtp+=~/.vim/bundle/fzf
 set background=dark
 colorscheme gruvbox 
 
-let g:gruvbox_contrast_dark='soft'
 let g:airline_theme='gruvbox'
 
 " transparent bg
