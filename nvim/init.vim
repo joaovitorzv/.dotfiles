@@ -71,6 +71,7 @@ set rtp+=~/.vim/bundle/fzf
 set background=dark
 colorscheme gruvbox 
 let g:airline_theme='gruvbox'
+
 nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()
 
 " transparent bg
