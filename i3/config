@@ -4,6 +4,11 @@ set $mod Mod1
 # set font
 font pango:SF Pro Text Regular 10
 
+# monitor
+workspace 3 output HDMI-0 
+
+
+
 # autostart
 exec brave-browser 
 exec --no-startup-id redshift-gtk
