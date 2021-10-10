@@ -75,7 +75,7 @@ let g:airline_theme='gruvbox'
 
 augroup SyntaxSettings
     autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+    autocmd BufNewFile,BufRead *.tsx set filetype=javascript
 augroup END
 
 " transparent bg
