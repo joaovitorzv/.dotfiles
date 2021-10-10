@@ -115,7 +115,6 @@ nnoremap <silent> <leader>pf :Files %:p:h<CR>
 " utils  
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :wq<CR>
-nnoremap <leader><S>m :q!<CR>
 
 " COC...k?
 if has('nvim')
