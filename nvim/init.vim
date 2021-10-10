@@ -36,7 +36,6 @@ Plug 'gruvbox-community/gruvbox'
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'https://github.com/kien/ctrlp.vim.git'
