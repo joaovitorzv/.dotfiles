@@ -34,6 +34,11 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
+"
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
