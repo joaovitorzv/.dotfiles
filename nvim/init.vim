@@ -71,6 +71,8 @@ set rtp+=~/.vim/bundle/fzf
 set background=dark
 colorscheme gruvbox 
 
+nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
