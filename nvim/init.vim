@@ -37,7 +37,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 
@@ -48,7 +47,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " auto brackets
 Plug 'jiangmiao/auto-pairs'
 
-" bottom tab status
+" airline 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
