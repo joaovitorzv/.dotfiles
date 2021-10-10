@@ -68,8 +68,7 @@ call plug#end()
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme
-colorscheme codedark 
-let g:airline_theme = 'codedark'
+colorscheme gruvbox 
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
