@@ -56,7 +56,9 @@ Plug 'vim-airline/vim-airline-themes'
 " syntax highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
+
+
 
 "fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
