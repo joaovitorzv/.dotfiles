@@ -71,7 +71,8 @@ set rtp+=~/.vim/bundle/fzf
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_tabline = 1
 set background=dark
-colorscheme gruvbox 
+colorscheme codedark 
+let g:airline_theme = 'codedark'
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
