@@ -33,6 +33,10 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -52,9 +56,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " syntax highlight
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 
 "fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
