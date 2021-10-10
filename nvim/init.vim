@@ -65,9 +65,6 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" set filetypes as typescriptreact
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-
 "fzf
 set rtp+=~/.vim/bundle/fzf
 
