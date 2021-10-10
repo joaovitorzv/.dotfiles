@@ -33,6 +33,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
+" syntax highlight
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
@@ -54,8 +55,6 @@ Plug 'jiangmiao/auto-pairs'
 " airline 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" syntax highlight
 
 "fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
