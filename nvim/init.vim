@@ -73,12 +73,6 @@ colorscheme gruvbox
 
 let g:airline_theme='gruvbox'
 
-" set filetypes as typescriptreact
-augroup twig_ft
-  au!
-  autocmd BufNewFile,BufRead *.tsx   set syntax=typescript
-augroup END
-
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
