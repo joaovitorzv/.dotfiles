@@ -68,9 +68,8 @@ call plug#end()
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_invert_tabline = 1
-set background=dark
+set t_Co=256
+set t_ut=
 colorscheme codedark 
 let g:airline_theme = 'codedark'
 
