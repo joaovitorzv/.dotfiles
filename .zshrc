@@ -25,6 +25,8 @@ alias py="python3"
 alias push="git push"
 alias v="nvim"
 alias install="sudo apt-get install "
+alias filmin="xrandr --output HDMI-0 --auto --left-of VGA-0"
+alias tvoff="xrandr --output HDMI-0 --off"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
