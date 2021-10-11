@@ -7,5 +7,6 @@
     "jsx",
     "tsx"
   ],
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "html.autoClosingTags": true
 }
