@@ -8,5 +8,6 @@
     "tsx"
   ],
   "eslint.autoFixOnSave": true,
-  "html.autoClosingTags": true
+  "html.autoClosingTags": true,
+  "typescript.autoClosingTags": false
 }
