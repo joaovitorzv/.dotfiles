@@ -5,7 +5,7 @@ set $mod Mod1
 font pango:SF Pro Text Regular 10
 
 # monitor
-workspace 9 output HDMI-0 
+workspace 5 output HDMI-0 
 
 
 
