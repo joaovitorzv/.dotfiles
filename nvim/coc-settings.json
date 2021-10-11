@@ -6,5 +6,6 @@
     "blade",
     "jsx",
     "tsx"
-  ]
+  ],
+  "eslint.autoFixOnSave": true
 }
