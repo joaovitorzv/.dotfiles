@@ -36,7 +36,7 @@ Plug 'gruvbox-community/gruvbox'
 " syntax highlight
 Plug 'sheerun/vim-polyglot'
 
-Plug 'jparise/vim-graphql'
+"Plug 'jparise/vim-graphql'
 
 "
 " useful plugins
