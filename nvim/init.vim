@@ -34,8 +34,8 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
-Plug 'sheerun/vim-polyglot'
-
+" Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Plug 'jparise/vim-graphql'
 
 "
