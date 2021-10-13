@@ -126,6 +126,16 @@ nnoremap <silent> <leader>pf :Files %:p:h<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :wq<CR>
 
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " COC...k?
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
