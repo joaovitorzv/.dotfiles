@@ -132,3 +132,12 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" Documentation on hover
+augroup hover
+	autocmd!
+	autocmd CursorHold * silent if ! coc#util#has_float()
+		\| call CocActionAsync('doHover')
+	\| endif
+	autocmd CursorHoldI * silent call CocActionAsync('showSignatureHelp')
+augroup end
