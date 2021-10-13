@@ -9,5 +9,6 @@
   ],
   "html.autoClosingTags": true,
   "eslint.autoFixOnSave": true,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "hover.target": "float"
 }
