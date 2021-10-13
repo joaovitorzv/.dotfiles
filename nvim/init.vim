@@ -68,7 +68,7 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
   hindent = { 
-    enable: true
+    enable = true
   },
   ighlight = {
     enable = true,
