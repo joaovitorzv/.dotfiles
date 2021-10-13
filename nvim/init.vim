@@ -85,7 +85,6 @@ set rtp+=~/.vim/bundle/fzf
 " colorscheme
 set background=dark
 colorscheme gruvbox 
-
 let g:airline_theme='gruvbox'
 
 " transparent bg
@@ -137,3 +136,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" prettier
+nmap <Leader>= <Plug>(prettier)
