@@ -67,7 +67,7 @@ call plug#end()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
-  ighlight = {
+  highlight = {
     enable = true,
     disable = { "cuda" },
     additional_vim_regex_highlighting = false,
