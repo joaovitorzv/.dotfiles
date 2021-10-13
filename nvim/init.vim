@@ -66,7 +66,7 @@ call plug#end()
 " treeshitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   highlight = {
     enable = true,
     disable = { "cuda" },
