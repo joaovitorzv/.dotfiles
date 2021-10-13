@@ -46,6 +46,10 @@ Plug 'vim-utils/vim-man'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
