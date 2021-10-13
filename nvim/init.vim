@@ -67,9 +67,6 @@ call plug#end()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
-  hindent = { 
-    enable = true
-  },
   ighlight = {
     enable = true,
     disable = { "cuda" },
