@@ -138,4 +138,4 @@ else
 endif
 
 " prettier
-nmap <Leader>= <Plug>(prettier)
+nmap <Leader>= <Plug>(Prettier)
