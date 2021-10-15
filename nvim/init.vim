@@ -26,6 +26,9 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
+" ignore
+set wildignore+=**/node_modules/*
+
 call plug#begin('~/.vim/plugged')
 
 " colorscheme
