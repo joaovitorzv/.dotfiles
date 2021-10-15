@@ -69,7 +69,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
   highlight = {
     enable = true,
-    disable = { "cuda" },
+    disable = { "cuda", "python" },
     additional_vim_regex_highlighting = false,
   },
   indent = {
