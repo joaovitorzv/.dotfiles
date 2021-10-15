@@ -147,3 +147,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" lua
+command! Scratch lua require'tools'.makeScratch()
