@@ -37,8 +37,8 @@ Plug 'gruvbox-community/gruvbox'
 " Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Plug 'jparise/vim-graphql'
+Plug 'neovim/nvim-lspconfig'
 
-"
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
