@@ -150,3 +150,5 @@ endif
 
 " lua
 command! Scratch lua require'tools'.makeScratch()
+
+require'lspconfig'.pylsp.setup{}
