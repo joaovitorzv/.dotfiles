@@ -43,13 +43,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
+Plug 'windwp/nvim-autopairs'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-
-" auto brackets
-" Plug 'jiangmiao/auto-pairs'
 
 " airline 
 Plug 'vim-airline/vim-airline'
@@ -148,3 +146,7 @@ endif
 
 " lua
 command! Scratch lua require'tools'.makeScratch()
+
+lua << EOF
+require'nvim-autopairs'.setup{}
+EOF
