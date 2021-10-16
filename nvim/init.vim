@@ -122,7 +122,7 @@ nnoremap <leader>f :FZF<CR>
 nnoremap <silent> <leader>pf :Files %:p:h<CR>
 
 " utils  
-nnoremap <silent> <leader>s :w<CR>
+nnoremap <leader>s :w<CR>
 nnoremap <leader>q :wq<CR>
 
 " definitions
