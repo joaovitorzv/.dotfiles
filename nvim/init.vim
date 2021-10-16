@@ -128,6 +128,7 @@ nnoremap <leader>q :wq<CR>
 " definitions
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+:
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
