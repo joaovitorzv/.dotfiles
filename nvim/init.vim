@@ -118,7 +118,7 @@ noremap <Leader>p "+p
 noremap <Leader>y "+y
 
 " find
-nnoremap <silent> <leader>f :Files %:p:h<CR> 
+nnoremap <silent> <leader>f :GFiles<CR> 
 
 " utils  
 nnoremap <leader>s :w<CR>
