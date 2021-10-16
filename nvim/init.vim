@@ -41,7 +41,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 
@@ -50,7 +49,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " auto brackets
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " airline 
 Plug 'vim-airline/vim-airline'
