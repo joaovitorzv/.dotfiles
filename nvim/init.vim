@@ -156,6 +156,7 @@ command! Scratch lua require'tools'.makeScratch()
 
 lua << EOF
 require'nvim-autopairs'.setup{}
+require'lspconfig'.pyright.setup{}
 EOF
 
 function! s:on_lsp_buffer_enabled() abort
