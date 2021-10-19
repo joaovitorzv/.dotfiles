@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'marko-cerovac/material.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
