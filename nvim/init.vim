@@ -157,3 +157,12 @@ command! Scratch lua require'tools'.makeScratch()
 lua << EOF
 require'nvim-autopairs'.setup{}
 EOF
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
