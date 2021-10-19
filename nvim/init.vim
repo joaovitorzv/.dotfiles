@@ -78,8 +78,6 @@ require'nvim-treesitter.configs'.setup {
     max_file_lines = nil,
   }
 }
-
-require'lspconfig'.pyright.setup{}
 EOF
 
 "fzf
