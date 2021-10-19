@@ -87,7 +87,7 @@ set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
 colorscheme material
-let g:material_style = 'darker'
+let g:material_style = 'deep ocean'
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
