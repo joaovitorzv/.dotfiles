@@ -29,7 +29,6 @@ set shortmess+=c
 call plug#begin('~/.vim/plugged')
 
 " colorscheme
-Plug 'marko-cerovac/material.nvim'
 Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
