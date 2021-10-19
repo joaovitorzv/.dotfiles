@@ -127,6 +127,8 @@ nnoremap <leader>q :wq<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -142,7 +144,7 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
 " lua
 command! Scratch lua require'tools'.makeScratch()
 
