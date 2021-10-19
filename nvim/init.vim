@@ -113,6 +113,7 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<CR>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
 " window tabs
 nnoremap <leader><tab> :tabn<CR>
 nnoremap <leader><S-Tab> :tabp<CR>
