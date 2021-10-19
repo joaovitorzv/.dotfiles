@@ -131,8 +131,8 @@ nnoremap <leader>s :w<CR>
 nnoremap <leader>q :wq<CR>
 
 " definitions
-nnoremap <silent> H :call <SID>show_documentation()<CR>
-nmap <silent> df :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
