@@ -86,10 +86,9 @@ EOF
 "fzf
 set rtp+=~/.vim/bundle/fzf
 
-" colorscheme
-set background=dark
-colorscheme gruvbox 
-let g:airline_theme='gruvbox'
+" set cursorline
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'/colorscheme
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
