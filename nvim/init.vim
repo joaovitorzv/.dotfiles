@@ -156,6 +156,6 @@ command! Scratch lua require'tools'.makeScratch()
 
 lua << EOF
 require'nvim-autopairs'.setup{}
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{}
 EOF
 
