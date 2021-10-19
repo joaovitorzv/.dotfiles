@@ -61,23 +61,23 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " treeshitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  highlight = {
-    enable = true,
-    disable = { "cuda", "python" },
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil,
-  }
-}
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = "all",
+"  highlight = {
+"    enable = true,
+"    disable = { "cuda", "python" },
+"    additional_vim_regex_highlighting = false,
+"  },
+"  indent = {
+"    enable = true
+"  },
+"  rainbow = {
+"    enable = true,
+"    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+"    max_file_lines = nil,
+"  }
+"}
 EOF
 
 "fzf
