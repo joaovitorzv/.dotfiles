@@ -30,7 +30,6 @@ call plug#begin('~/.vim/plugged')
 
 " colorscheme
 Plug 'marko-cerovac/material.nvim'
-Plug 'tomasiser/vim-code-dark'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
@@ -87,9 +86,8 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " set cursorline
-set t_Co=256
 colorscheme onehalflight
-let g:airline_theme='onehalfdark'/colorscheme
+let g:airline_theme='onehalfdark'
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
