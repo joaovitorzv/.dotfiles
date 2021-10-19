@@ -36,7 +36,6 @@ Plug 'gruvbox-community/gruvbox'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
-Plug 'p00f/nvim-ts-rainbow'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'neovim/nvim-lspconfig'
 
@@ -46,6 +45,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 Plug 'windwp/nvim-autopairs'
+Plug 'p00f/nvim-ts-rainbow'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
