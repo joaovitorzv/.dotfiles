@@ -86,7 +86,6 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " set cursorline
-set t_Co=256
 colorscheme onehalflight
 let g:airline_theme='onehalfdark'
 let g:lightline = { 'colorscheme': 'onehalfdark' }
