@@ -72,6 +72,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
+require'lspconfig'.pyright.setup{}
 EOF
 
 "fzf
