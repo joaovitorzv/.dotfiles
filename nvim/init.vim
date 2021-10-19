@@ -90,9 +90,9 @@ colorscheme material
 let g:material_style = 'deep ocean'
 
 " transparent bg
-highlight Normal     ctermbg=NONE guibg=NONE
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
+"highlight Normal     ctermbg=NONE guibg=NONE
+"highlight LineNr     ctermbg=NONE guibg=NONE
+"highlight SignColumn ctermbg=NONE guibg=NONE
 
 " leader key
 let mapleader = " "
