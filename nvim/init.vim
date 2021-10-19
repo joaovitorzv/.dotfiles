@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 " colorscheme
 Plug 'marko-cerovac/material.nvim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
