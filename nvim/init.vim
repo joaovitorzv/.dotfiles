@@ -37,6 +37,7 @@ Plug 'gruvbox-community/gruvbox'
 
 
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'neovim/nvim-lspconfig'
 
 " useful plugins
