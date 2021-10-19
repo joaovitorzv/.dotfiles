@@ -79,7 +79,7 @@ call plug#end()
 "    max_file_lines = nil,
 "  }
 "}
-EOF
+"EOF
 
 "fzf
 set rtp+=~/.vim/bundle/fzf
