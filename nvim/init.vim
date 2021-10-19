@@ -35,8 +35,7 @@ Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Plug 'jparise/vim-graphql'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " useful plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -143,6 +142,7 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " lua
 command! Scratch lua require'tools'.makeScratch()
 
