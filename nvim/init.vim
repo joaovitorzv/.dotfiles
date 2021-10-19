@@ -33,7 +33,7 @@ Plug 'gruvbox-community/gruvbox'
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 Plug 'prabirshrestha/vim-lsp'
