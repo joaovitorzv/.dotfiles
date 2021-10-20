@@ -14,7 +14,7 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes
 set backspace=indent,eol,start
-set colorcolumn=80
+set colorcolumn=90
 set nohlsearch
 set completeopt=menuone,noselect
 
