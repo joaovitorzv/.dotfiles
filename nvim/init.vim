@@ -129,6 +129,7 @@ nnoremap <silent> <leader>f :GFiles<CR>
 " utils  
 nnoremap <leader>s :w<CR>
 nnoremap <leader>q :wq<CR>
+nmap <buffer> <leader>rn <plug>(lsp-rename)
 
 " definitions
 nnoremap <silent> K :call <SID>show_documentation()<CR>
