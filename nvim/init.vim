@@ -156,10 +156,7 @@ command! Scratch lua require'tools'.makeScratch()
 
 lua << EOF
 require'nvim-autopairs'.setup{}
-require'lspconfig'.pylsp.setup{
-   
-  "pylsp.plugins.flake8.maxLineLength": 150 
-}
+require'lspconfig'.pyright.setup{}
 EOF
 
 lua << EOF
