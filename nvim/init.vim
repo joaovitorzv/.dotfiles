@@ -46,6 +46,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 Plug 'windwp/nvim-autopairs'
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'tpope/vim-surround'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
