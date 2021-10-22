@@ -130,6 +130,7 @@ nnoremap <leader>q :wq<CR>
 " definitions
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
 "nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <leader>rn <Plug>(coc-rename)
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
