@@ -82,7 +82,6 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
-hi rainbowcol1 guifg=#f200ff
 
 "fzf
 set rtp+=~/.vim/bundle/fzf
