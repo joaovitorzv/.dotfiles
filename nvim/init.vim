@@ -47,6 +47,7 @@ Plug 'preservim/nerdtree'
 Plug 'windwp/nvim-autopairs'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-surround'
+Plug 'prettier/vim-prettier'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
