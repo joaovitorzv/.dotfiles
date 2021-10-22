@@ -74,14 +74,14 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = false 
   }
- refactor = {
+  refactor = {
     smart_rename = {
       enable = true,
       keymaps = {
         smart_rename = "grr",
       },
     },
-  },
+  }
 }
 require'nvim-autopairs'.setup{}
 EOF
