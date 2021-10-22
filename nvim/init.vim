@@ -78,10 +78,11 @@ require'nvim-treesitter.configs'.setup {
   rainbow = {
     enable = true,
     extended_mode = true,
-    max_file_lines = nil,
+    max_file_lines = nil
   }
 }
 EOF
+hi rainbowcol1 guifg=#f200ff
 
 "fzf
 set rtp+=~/.vim/bundle/fzf
