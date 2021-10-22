@@ -67,7 +67,7 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "python" },
   highlight = {
-    enable = false,
+    enable = true,
     disable = { "cuda" },
     additional_vim_regex_highlighting = false,
   },
