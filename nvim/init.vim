@@ -81,7 +81,7 @@ require'nvim-treesitter.configs'.setup {
         smart_rename = "grr",
       },
     },
-  }
+  },
 }
 require'nvim-autopairs'.setup{}
 EOF
