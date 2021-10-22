@@ -45,7 +45,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'preservim/nerdtree'
 Plug 'windwp/nvim-autopairs'
-Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'prettier/vim-prettier'
 
@@ -74,14 +73,9 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = false 
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil
   }
 }
-EOF
+eOF
 
 "fzf
 set rtp+=~/.vim/bundle/fzf
