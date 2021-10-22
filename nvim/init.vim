@@ -75,8 +75,8 @@ require'nvim-treesitter.configs'.setup {
     enable = false 
   }
 }
-eOF
-
+EOF
+ 
 "fzf
 set rtp+=~/.vim/bundle/fzf
 
