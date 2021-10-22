@@ -74,7 +74,16 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = false 
   }
+ refactor = {
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr",
+      },
+    },
+  },
 }
+require'nvim-autopairs'.setup{}
 EOF
  
 "fzf
@@ -150,9 +159,6 @@ endif
 " lua
 command! Scratch lua require'tools'.makeScratch()
 
-nmap <buffer> <leader>rn <plug>(lsp-rename)
-
 lua << EOF
-require'nvim-autopairs'.setup{}
 EOF
 
