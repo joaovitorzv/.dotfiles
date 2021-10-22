@@ -74,15 +74,6 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = false 
   },
-  refactor = {
-    highlight_current_scope = { enable = true },
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
-  },
 }
 require'nvim-autopairs'.setup{}
 EOF
