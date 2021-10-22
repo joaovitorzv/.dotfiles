@@ -73,7 +73,7 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = false 
-  }
+  },
   refactor = {
     smart_rename = {
       enable = true,
