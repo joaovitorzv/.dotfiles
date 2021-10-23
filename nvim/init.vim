@@ -83,8 +83,6 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
-set t_Co=256
-set t_ut=
 colorscheme codedark 
 
 " transparent bg
