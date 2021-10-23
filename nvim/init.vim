@@ -36,7 +36,6 @@ Plug 'tomasiser/vim-code-dark'
 " Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-
 Plug 'prabirshrestha/vim-lsp'
 Plug 'neovim/nvim-lspconfig'
 
