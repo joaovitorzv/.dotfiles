@@ -83,7 +83,7 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
-colorscheme gruvbox 
+colorscheme codedark 
 
 " transparent bg
 highlight Normal     ctermbg=NONE guibg=NONE
