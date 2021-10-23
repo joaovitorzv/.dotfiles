@@ -85,6 +85,7 @@ set rtp+=~/.vim/bundle/fzf
 set t_Co=256
 set t_ut=
 colorscheme codedark
+
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
 "highlight LineNr     ctermbg=NONE guibg=NONE
