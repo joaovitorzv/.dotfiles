@@ -82,17 +82,7 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
-if has('termguicolors')
-  set termguicolors
-endif
-
-
-let g:edge_style = 'neon'
-" let g:edge_enable_italic = 1
-let g:edge_disable_italic_comment = 0 
-
-colorscheme edge
-let g:airline_theme = 'edge'
+colorscheme onedark
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
