@@ -84,7 +84,6 @@ set rtp+=~/.vim/bundle/fzf
 " colorscheme 
 set t_Co=256
 set t_ut=
-let g:codedark_conservative = 1
 colorscheme codedark
 
 " transparent bg
