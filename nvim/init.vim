@@ -82,9 +82,17 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
-set t_Co=256
-set t_ut=
-colorscheme codedark
+if has('termguicolors')
+  set termguicolors
+endif
+
+
+let g:edge_style = 'aura'
+" let g:edge_enable_italic = 1
+let g:edge_disable_italic_comment = 1
+
+colorscheme edge
+
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
