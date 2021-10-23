@@ -33,7 +33,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 
 " syntax highlight
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'prabirshrestha/vim-lsp'
@@ -67,7 +67,7 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "python" },
   highlight = {
-    enable = false,
+    enable = true,
     disable = { "cuda", "vim" },
     additional_vim_regex_highlighting = false,
   },
