@@ -82,6 +82,10 @@ EOF
 set rtp+=~/.vim/bundle/fzf
 
 " colorscheme 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 colorscheme onedark
 
 " transparent bg
