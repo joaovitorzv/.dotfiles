@@ -153,5 +153,6 @@ endif
 command! Scratch lua require'tools'.makeScratch()
 
 lua << EOF
+require'lspconfig'.pyright.setup{}
 EOF
 
