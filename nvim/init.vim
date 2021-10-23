@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 
 " colorscheme
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/sonokai'
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
