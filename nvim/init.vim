@@ -86,7 +86,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme onedark
+colorscheme sonokai 
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
