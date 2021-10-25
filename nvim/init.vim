@@ -67,7 +67,6 @@ call plug#end()
 lua << EOF
 require'lspconfig'.pyright.setup{}
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "python" },
   highlight = {
     enable = true,
     disable = { "cuda", "vim" },
