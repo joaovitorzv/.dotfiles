@@ -32,6 +32,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/sonokai'
 Plug 'tomasiser/vim-code-dark'
+Plug 'pacokwon/onedarkhc.vim'
+Plug 'joshdick/onedark.vim'
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
