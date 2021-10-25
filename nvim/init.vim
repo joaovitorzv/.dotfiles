@@ -76,7 +76,7 @@ require'nvim-treesitter.configs'.setup {
     enable = false 
   },
 }
-require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pyright.setup{}
 require'nvim-autopairs'.setup{}
 EOF
  
