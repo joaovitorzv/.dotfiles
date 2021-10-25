@@ -36,7 +36,7 @@ Plug 'Mofiqul/vscode.nvim'
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'vim-python/python-syntax'
+
 Plug 'prabirshrestha/vim-lsp'
 Plug 'neovim/nvim-lspconfig'
 
@@ -63,22 +63,20 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-
-let g:python_highlight_all = 1
 " treeshitter
 lua << EOF
+require'lspconfig'.pyright.setup{}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "python" },
   highlight = {
     enable = true,
-    disable = { "cuda", "vim", "python" },
+    disable = { "cuda", "vim" },
     additional_vim_regex_highlighting = false,
   },
   indent = {
     enable = false 
   },
 }
-require'lspconfig'.pyright.setup{}
 require'nvim-autopairs'.setup{}
 EOF
  
