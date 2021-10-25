@@ -87,11 +87,11 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-let g:sonokai_style = 'andromeda'
-let g:sonokai_enable_italic = 0 
-let g:sonokai_disable_italic_comment = 0 
-colorscheme sonokai 
-let g:airline_theme = 'sonokai'
+"let g:sonokai_style = 'andromeda'
+"let g:sonokai_enable_italic = 0 
+"let g:sonokai_disable_italic_comment = 0 
+colorscheme darkplus 
+"let g:airline_theme = 'sonokai'
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
