@@ -63,6 +63,8 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+
+let g:python_highlight_all = 1
 " treeshitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
