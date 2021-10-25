@@ -76,6 +76,7 @@ require'nvim-treesitter.configs'.setup {
     enable = false 
   },
 }
+require'nvim-autopairs'.setup{}
 EOF
  
 "fzf
