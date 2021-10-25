@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 " colorscheme
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/sonokai'
-Plug 'Mofiqul/vscode.nvim'
+Plug 'tomasiser/vim-code-dark'
 
 " syntax highlight
 " Plug 'sheerun/vim-polyglot'
@@ -91,8 +91,7 @@ endif
 "let g:sonokai_style = 'default'
 "let g:sonokai_enable_italic = 0 
 "let g:sonokai_disable_italic_comment = 0 
-let g:vscode_style = "dark"
-colorscheme vscode 
+colorscheme codedark 
 
 "let g:airline_theme = 'sonokai'
 
