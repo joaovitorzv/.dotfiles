@@ -65,7 +65,6 @@ call plug#end()
 
 " treeshitter
 lua << EOF
-require'lspconfig'.pyright.setup{}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "python" },
   highlight = {
