@@ -116,6 +116,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>H :wincmd H<CR>
 nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>J :wincmd J<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
