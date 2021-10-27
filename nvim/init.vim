@@ -93,7 +93,7 @@ endif
 "let g:sonokai_style = 'default'
 "let g:sonokai_enable_italic = 0 
 "let g:sonokai_disable_italic_comment = 0 
-colorscheme onedarkhc
+colorscheme codedark 
 let g:airline_theme='onedark'
 
 " transparent bg
