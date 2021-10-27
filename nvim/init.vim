@@ -90,8 +90,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme gruvbox 
 let g:gruvbox_contrast_dark = 'hard' 
+colorscheme gruvbox 
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
