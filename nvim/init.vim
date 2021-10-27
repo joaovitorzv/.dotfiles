@@ -91,7 +91,7 @@ if (has("termguicolors"))
 endif
 
 colorscheme gruvbox 
-let g:gruvbox_contrast_dark = 'soft' 
+let g:gruvbox_contrast_dark = 'hard' 
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
@@ -103,7 +103,7 @@ let mapleader = " "
 
 " source init
 nnoremap <leader>up :so ~/dotfiles/nvim/init.vim<CR>
-
+m
 " nerdtree
 nmap <F6> :NERDTreeToggle<CR>
 
