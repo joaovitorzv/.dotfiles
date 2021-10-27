@@ -102,7 +102,7 @@ let g:gruvbox_contrast_dark = 'soft'
 let mapleader = " "
 
 " source init
-nnoremap <leader>up :tabn<CR>
+nnoremap <leader>up :so ~/dotfiles/nvim/init.vim<CR>
 
 " nerdtree
 nmap <F6> :NERDTreeToggle<CR>
