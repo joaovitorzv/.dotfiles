@@ -91,7 +91,7 @@ if (has("termguicolors"))
 endif
 
 colorscheme gruvbox 
-
+let g:gruvbox_transparent_bg = 1
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
 "highlight LineNr     ctermbg=NONE guibg=NONE
