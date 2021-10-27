@@ -91,7 +91,7 @@ if (has("termguicolors"))
 endif
 
 colorscheme gruvbox 
-let g:gruvbox_contrast_dark = 'hard' 
+let g:gruvbox_contrast_dark = 'soft' 
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
