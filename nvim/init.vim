@@ -94,7 +94,6 @@ endif
 "let g:sonokai_enable_italic = 0 
 "let g:sonokai_disable_italic_comment = 0 
 colorscheme codedark 
-let g:airline_theme='codedark'
 
 " transparent bg
 "highlight Normal     ctermbg=NONE guibg=NONE
