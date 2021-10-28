@@ -83,11 +83,11 @@ bindsym Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboa
 bindsym $mod+Shift+d exec systemctl poweroff -i
 
 # rofi
-bindsym $mod+d exec rofi -show drun
+# bindsym $mod+d exec rofi -show drun
 bindsym $mod+u exec rofi -show run
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
