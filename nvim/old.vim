@@ -1,5 +1,9 @@
+"
+" This file is not being used,
+" my current enviroment setup is init.lua
+"
 syntax on
-" test"
+
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab 
