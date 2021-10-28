@@ -67,7 +67,7 @@ require'lspconfig'.pyright.setup{}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "typescript", "tsx", "graphql", "html", "jsdoc", "json", "json5", "yaml", "lua", "regex", "scss", "css", "bash", "python"  },
   highlight = {
-    enable = false,
+    enable = true,
     disable = { "vim" },
     additional_vim_regex_highlighting = true,
   },
