@@ -36,7 +36,7 @@ Plug 'pacokwon/onedarkhc.vim'
 Plug 'joshdick/onedark.vim'
 
 " syntax highlight
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'prabirshrestha/vim-lsp'
@@ -67,7 +67,7 @@ require'lspconfig'.pyright.setup{}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "javascript", "typescript", "tsx", "graphql", "html", "jsdoc", "json", "json5", "yaml", "lua", "regex", "scss", "css", "bash", "python"  },
   highlight = {
-    enable = true,
+    enable = false,
     disable = { "vim" },
     additional_vim_regex_highlighting = true,
   },
