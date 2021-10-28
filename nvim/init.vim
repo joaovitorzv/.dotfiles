@@ -143,6 +143,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <leader>rn <Plug>(coc-rename)
 
+" navigate suggetions with tab 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 function! s:show_documentation()
