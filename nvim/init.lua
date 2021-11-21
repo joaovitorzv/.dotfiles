@@ -285,15 +285,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
-
 -- null-ls
 local null_ls = require 'null-ls'
 null_ls.config({ 
@@ -304,7 +295,15 @@ null_ls.config({
 	} 
 })
 
-print(vim.inspect(null_ls.builtins.diagnostics.eslint))
+
+-- Enable the following language servers
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
