@@ -102,7 +102,7 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nerdtree"
   },
   ["null-ls.nvim"] = {
-    config = { "\27LJ\2\nf\0\0\3\0\5\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\1\0009\0\4\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14lspconfig\vconfig\fnull-ls\frequire\0" },
+    config = { "\27LJ\2\nü\1\0\0\5\0\14\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\4\0006\4\3\0009\4\4\0049\4\5\0049\4\6\4>\4\1\0036\4\3\0009\4\4\0049\4\a\0049\4\6\4>\4\2\0036\4\3\0009\4\4\0049\4\b\0049\4\t\4>\4\3\3=\3\v\2B\0\2\0016\0\0\0'\2\f\0B\0\2\0029\0\1\0009\0\r\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14lspconfig\fsources\1\0\0\rprettier\15formatting\17code_actions\reslint_d\16diagnostics\rbuiltins\fnull_ls\vconfig\fnull-ls\frequire\0" },
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
   },
@@ -167,7 +167,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\nf\0\0\3\0\5\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\0\1\0009\0\4\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14lspconfig\vconfig\fnull-ls\frequire\0", "config", "null-ls.nvim")
+try_loadstring("\27LJ\2\nü\1\0\0\5\0\14\0\0316\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0004\3\4\0006\4\3\0009\4\4\0049\4\5\0049\4\6\4>\4\1\0036\4\3\0009\4\4\0049\4\a\0049\4\6\4>\4\2\0036\4\3\0009\4\4\0049\4\b\0049\4\t\4>\4\3\3=\3\v\2B\0\2\0016\0\0\0'\2\f\0B\0\2\0029\0\1\0009\0\r\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14lspconfig\fsources\1\0\0\rprettier\15formatting\17code_actions\reslint_d\16diagnostics\rbuiltins\fnull_ls\vconfig\fnull-ls\frequire\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
 if should_profile then save_profiles() end
 
