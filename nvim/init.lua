@@ -146,6 +146,7 @@ vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true,
 
 -- Yank from clipboard
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true })
+vim.api.nvim_set_keymap('v', '<leader>p', '"+p', { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true })
 
 -- Highlight on yank
@@ -300,7 +301,8 @@ null_ls.config({
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.eslint,
 		null_ls.builtins.diagnostics.eslint
-	}
+	} 
+
 })
 
 -- Set completeopt to have a better completion experience
