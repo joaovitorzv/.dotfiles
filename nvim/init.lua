@@ -353,6 +353,7 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
       end,
+      capabilities = capabilities
     } 
   elseif lsp == 'null-ls' then
     nvim_lsp[lsp].setup{} 
