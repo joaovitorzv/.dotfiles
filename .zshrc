@@ -6,7 +6,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export ZSH="/home/joao/.oh-my-zsh.sh"
 
 # ZSH_THEME
-ZSH_THEME="robbyrussell"
+ZSH_THEME="jaischeema"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

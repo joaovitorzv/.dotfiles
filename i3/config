@@ -7,8 +7,6 @@ font pango:SF Pro Text Regular 10
 # monitor
 workspace 5 output HDMI-0 
 
-
-
 # autostart
 exec brave-browser 
 exec --no-startup-id redshift-gtk
@@ -16,7 +14,7 @@ exec --no-startup-id redshift
 exec redshift
 exec alsactl --file ~/.config/asound.state restore
 exec --no-startup-id  ~/.config/polybar/launch.sh --forest
-#exec gitwatch -r origin -b main -m 'gitwatch got something for us' ~/dotfiles
+exec gitwatch -r origin -b main -m 'gitwatch got something for us' ~/dotfiles
 
 # window title
 title_align center
@@ -80,7 +78,7 @@ bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/pn
 bindsym Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # turnoff
-bindsym $mod+Shift+d exec systemctl poweroff -i
+bindsym $mod+Shift+s exec systemctl poweroff -i
 
 # rofi
 # bindsym $mod+d exec rofi -show drun
@@ -214,7 +212,4 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# polybar configuration
 

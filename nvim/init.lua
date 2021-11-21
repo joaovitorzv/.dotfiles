@@ -21,10 +21,9 @@ require('packer').startup(function()
   use 'tpope/vim-fugitive' -- Git commands in nvim
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use 'joshdick/onedark.vim' -- Theme inspired by Atom
+  use 'bluz71/vim-moonfly-colors'
   use 'itchyny/lightline.vim' -- Fancier statusline
   -- Add indentation guides even on blank lines
   use 'lukas-reineke/indent-blankline.nvim'
@@ -39,7 +38,24 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- Surround
+  use 'tpope/vim-surround'
+	-- Nerdtree
+	use 'preservim/nerdtree'
+	-- null-ls
+	use({ "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+        require("null-ls").config({})
+        require("lspconfig")["null-ls"].setup({})
+    end,
+    requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+  })
 end)
+
+-- Tabs
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 
 --Incremental live completion (note: this is now a default on master)
 vim.o.inccommand = 'nosplit'
@@ -84,12 +100,12 @@ vim.o.scrolloff = 8
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
+-- vim.g.onedark_terminal_italics = 2
+vim.cmd [[colorscheme moonfly]]
 
 --Set statusbar
 vim.g.lightline = {
-  colorscheme = 'onedark',
+  colorscheme = 'moonfly',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
   component_function = { gitbranch = 'fugitive#head' },
 }
@@ -101,8 +117,8 @@ vim.g.maplocalleader = ' '
 
 -- Quit, Save & Quit
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>wq', '<cmd> wq<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>qu', '<cmd> q<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
 
 -- Source init.lua
 vim.api.nvim_set_keymap('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
@@ -121,12 +137,15 @@ vim.api.nvim_set_keymap('n', '<leader>-', '<cmd> vertical resize -5<CR>', { nore
 vim.api.nvim_set_keymap('n', '<leader><tab>', '<cmd> tabn<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = true })
 
+-- Toggle NERDTree
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
+
 -- Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 -- Yank from clipboard
-vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = false })
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true })
 
 -- Highlight on yank
@@ -149,7 +168,7 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
-vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_show_first_indent_level = false
 
 -- Gitsigns
 require('gitsigns').setup {
@@ -177,11 +196,8 @@ require('telescope').setup {
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 -- Treesitter configuration
@@ -269,13 +285,21 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
+
+-- null-ls
+local null_ls = require 'null-ls'
+null_ls.config({ 
+	sources = {
+		null_ls.builtins.formatting.prettier,
+	} 
+})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
