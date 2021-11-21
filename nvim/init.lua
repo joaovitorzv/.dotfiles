@@ -311,6 +311,7 @@ for _, lsp in ipairs(servers) do
       on_attach = on_attach,
       capabilities = capabilities,
     }
+  end
 end
 
 -- Set completeopt to have a better completion experience
