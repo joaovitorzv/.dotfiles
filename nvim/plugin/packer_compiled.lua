@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/lightline.vim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nerdtree"
@@ -117,6 +121,10 @@ _G.packer_plugins = {
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
