@@ -305,7 +305,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
 for _, lsp in ipairs(servers) do
   if lsp == 'tsserver' then
-    nvim_lsp[lsp].setup {
+    nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
       -- it from the source if you want to add your own init_options.
       init_options = require("nvim-lsp-ts-utils").init_options,
