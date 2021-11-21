@@ -49,15 +49,6 @@ require('packer').startup(function()
 	-- Formatting 
 	use { 'prettier/vim-prettier', run = 'yarn install' }
 	use({ "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-        require("null-ls").config({
-          sources = {
-            null_ls.builtins.diagnostics.eslint_d, 
-            null_ls.builtins.code_actions.eslint_d,
-            null_ls.builtins.formatting.prettier
-          }
-        })
-    end,
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -363,6 +354,15 @@ for _, lsp in ipairs(servers) do
     }
   end
 end
+
+local null_ls = require "null-ls"
+null_ls.config({
+  sources = {
+    null_ls.builtins.diagnostics.eslint_d, 
+    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.formatting.prettier
+  }
+})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
