@@ -260,6 +260,15 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+local null_ls = require "null-ls"
+null_ls.config({
+  sources = {
+    null_ls.builtins.diagnostics.eslint_d, 
+    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.formatting.prettier
+  }
+})
+
 -- LSP settings
 local nvim_lsp = require 'lspconfig'
 local on_attach = function(_, bufnr)
@@ -355,14 +364,6 @@ for _, lsp in ipairs(servers) do
   end
 end
 
-local null_ls = require "null-ls"
-null_ls.config({
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d, 
-    null_ls.builtins.code_actions.eslint_d,
-    null_ls.builtins.formatting.prettier
-  }
-})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
