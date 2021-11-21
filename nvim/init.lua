@@ -302,8 +302,9 @@ null_ls.config({
 		null_ls.builtins.formatting.eslint,
 		null_ls.builtins.diagnostics.eslint
 	} 
-
 })
+
+print(vim.inspect(null_ls.builtins.diagnostics.eslint))
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
