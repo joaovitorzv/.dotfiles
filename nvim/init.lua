@@ -57,7 +57,6 @@ require('packer').startup(function()
             null_ls.builtins.formatting.prettier
           }
         })
-        require("lspconfig")["null-ls"].setup({})
     end,
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
