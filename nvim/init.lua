@@ -357,7 +357,9 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     } 
   elseif lsp == 'null-ls' then
-    nvim_lsp[lsp].setup{} 
+    nvim_lsp[lsp].setup{
+      on_attach = on_attach
+    } 
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
