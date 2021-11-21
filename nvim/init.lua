@@ -295,7 +295,6 @@ null_ls.config({
 	} 
 })
 
-
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
