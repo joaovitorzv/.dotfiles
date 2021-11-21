@@ -142,6 +142,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors"
   },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-prettier"
+  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
