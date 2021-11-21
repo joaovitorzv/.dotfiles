@@ -304,6 +304,9 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
 for _, lsp in ipairs(servers) do
+  if lsp ~= 'tsserver' then
+    print(vim.inspect('caiu'))
+  else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
       capabilities = capabilities,
