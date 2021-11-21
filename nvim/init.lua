@@ -143,6 +143,7 @@ vim.api.nvim_set_keymap('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = tr
 -- Toggle NERDTree
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
 NERDTreeShowHidden = 1 
+
 -- Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
