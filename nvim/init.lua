@@ -142,7 +142,6 @@ vim.api.nvim_set_keymap('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = tr
 
 -- Toggle NERDTree
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
-NERDTreeShowHidden = 1 
 
 -- Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
@@ -175,6 +174,7 @@ vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = false
 
+local NERDTreeShowHidden = 1 
 
 -- Gitsigns
 require('gitsigns').setup {
