@@ -42,7 +42,8 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
 	-- Nerdtree
 	use 'preservim/nerdtree'
-	-- null-ls
+	-- Formatting 
+	use { 'prettier/vim-prettier', run = 'yarn install' }
 	use({ "jose-elias-alvarez/null-ls.nvim",
     config = function()
         require("null-ls").config({})
@@ -50,6 +51,7 @@ require('packer').startup(function()
     end,
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
+
 end)
 
 -- Tabs
