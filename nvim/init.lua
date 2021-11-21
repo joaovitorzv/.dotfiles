@@ -287,13 +287,14 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- null-ls
 local null_ls = require 'null-ls'
-null_ls.config({ 
-	sources = {
+local sources = { 
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.eslint,
-		null_ls.builtins.diagnostics.eslint
-	} 
-})
+		null_ls.builtins.diagnostics.eslint.with({
+			prefer_local = "node_modules/@eslint/eslintrc"
+		})
+}
+null_ls.config({ sources = sources })
 
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
