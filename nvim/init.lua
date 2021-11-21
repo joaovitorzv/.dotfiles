@@ -303,7 +303,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
 for _, lsp in ipairs(servers) do
-  if lsp ~= 'tsserver' then
+  if lsp == 'tsserver' then
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
       -- it from the source if you want to add your own init_options.
@@ -354,6 +354,8 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
       end,
     } 
+  elseif lsp == 'null-ls' then
+    nvim_lsp[lsp].setup{} 
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
