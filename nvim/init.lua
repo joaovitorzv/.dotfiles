@@ -142,6 +142,8 @@ vim.api.nvim_set_keymap('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = tr
 
 -- Toggle NERDTree
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
+-- NERDTree hidden files
+
 
 -- Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
@@ -288,17 +290,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- null-ls
-local null_ls = require 'null-ls'
-local sources = { 
-		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.eslint,
-		null_ls.builtins.diagnostics.eslint
-}
-null_ls.config({ sources = sources })
-
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
