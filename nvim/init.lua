@@ -382,7 +382,7 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     } 
   elseif lsp == 'null-ls' then
-    print(vim.inspect(nvim_lsp[lsp]))
+    print(vim.inspect(nvim_lsp[lsp].setup { defaults = { debug = true } } ))
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
