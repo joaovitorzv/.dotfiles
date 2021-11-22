@@ -336,8 +336,11 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
         vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 
-        local ts_utils = require("nvim-lsp-ts-utils")
 
+        -- Try disabling tsserver formatting
+        client.resolved_capabilities.document_formatting = false
+
+        local ts_utils = require("nvim-lsp-ts-utils")
         -- defaults
         ts_utils.setup({
             debug = false,
