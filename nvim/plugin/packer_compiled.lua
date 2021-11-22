@@ -109,6 +109,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
