@@ -311,8 +311,8 @@ for _, lsp in ipairs(servers) do
       -- it from the source if you want to add your own init_options.
       --init_options = require("nvim-lsp-ts-utils").init_options,
       ----
-      on_attach = on_attach 
-      capabilities = capabilities
+      on_attach = on_attach,
+      capabilities = capabilities,
     } 
   else
     nvim_lsp[lsp].setup {
