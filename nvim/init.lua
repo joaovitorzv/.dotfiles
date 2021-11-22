@@ -304,7 +304,7 @@ null_ls.config({ sources = sources })
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
-  if lsp == 'tsserveffdar' then
+  if lsp == 'tsserver' then
 
     print(vim.inspect('cai'))
     nvim_lsp.tsserver.setup {
@@ -352,7 +352,6 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     } 
   else
-    print(vim.inspect('cio'))
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
       capabilities = capabilities,
