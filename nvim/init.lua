@@ -51,7 +51,6 @@ require('packer').startup(function()
 	use({ "jose-elias-alvarez/null-ls.nvim",
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 end)
 
 -- Tabs
