@@ -304,7 +304,7 @@ null_ls.config({ sources = sources })
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
-  if lsp == 'tsservedkjfr' then
+  if lsp == 'tsserver' then
 
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
