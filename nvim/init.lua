@@ -299,7 +299,7 @@ local sources = {
   null_ls.builtins.formatting.prettier
 }
 
-null_ls.config({ sources = sources })
+null_ls.config({ sources = sources, debug = true })
 
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
@@ -381,8 +381,6 @@ for _, lsp in ipairs(servers) do
       end,
       capabilities = capabilities
     } 
-  elseif lsp == 'null-ls' then
-    print(vim.inspect(nvim_lsp[lsp].setup { debug = true } ))
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
