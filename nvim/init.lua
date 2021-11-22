@@ -352,6 +352,7 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     } 
   else
+    print(vim.inspect('cio'))
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
       capabilities = capabilities,
