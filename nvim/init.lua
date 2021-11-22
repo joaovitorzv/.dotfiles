@@ -306,7 +306,6 @@ local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'n
 for _, lsp in ipairs(servers) do
   if lsp == 'tsserver' then
 
-    print(vim.inspect('cai'))
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
       -- it from the source if you want to add your own init_options.
