@@ -301,6 +301,7 @@ local sources = {
 
 null_ls.config({ sources = sources })
 
+vim.g.debug = true
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
