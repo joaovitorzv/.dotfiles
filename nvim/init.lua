@@ -298,7 +298,7 @@ local sources = {
   null_ls.builtins.formatting.prettier
 }
 
-null_ls.config({ sources = sources })
+null_ls.config({ sources = sources, debug = true })
 
 -- Enable the following language servers
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
