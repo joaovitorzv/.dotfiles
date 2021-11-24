@@ -1,6 +1,7 @@
 local api = vim.api
 
 local get_options = function (custom_opts)
+  print(vim.inspect(custom_opts))
   local options = { noremap = true, silent = true }
   if custom_opts then
     options = vim.tbl_extend("force", options, custom_opts)
