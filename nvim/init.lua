@@ -303,9 +303,9 @@ for _, lsp in ipairs(servers) do
 
         -- no default maps, so you may want to define some here
         local tsopts = { silent = true }
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
+        t.buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
+        t.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
+        t.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
       end,
       capabilities = capabilities
     }
