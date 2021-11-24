@@ -16,4 +16,4 @@ M.command = function (mode, target, source, opts)
 end
 
 
-return
+return M
