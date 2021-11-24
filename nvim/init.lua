@@ -24,6 +24,7 @@ require('packer').startup(function()
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'bluz71/vim-moonfly-colors'
+  use '/morhetz/gruvbox'
   use 'itchyny/lightline.vim' -- Fancier statusline
   use {
     'nvim-lualine/lualine.nvim',
