@@ -5,7 +5,6 @@ local get_options = function (custom_opts)
   if custom_opts then
     options = vim.tbl_extend("force", options, custom_opts)
   end
-  print(vim.inspect(options))
   return options
 end
 
