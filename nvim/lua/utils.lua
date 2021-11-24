@@ -14,4 +14,8 @@ M.map = function (mode, keymap, source, opts)
   api.nvim_set_keymap(mode, keymap, source, get_options(opts))
 end
 
+M.map = function (bufrn, mode, keymap, source, opts)
+  api.nvim_set_buf_keymap(bufnr or 0, mode, keymap, source, get_options(opts))
+end
+
 return M
