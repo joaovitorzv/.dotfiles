@@ -232,7 +232,7 @@ u.map('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<C
 u.map('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 u.map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
-require('plugins")
+require('plugins')
 
 -- Add Lua language-server
 local system_name
