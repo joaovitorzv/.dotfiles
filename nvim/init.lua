@@ -140,7 +140,7 @@ require'lualine'.setup {
 }
 
 --Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+u.map('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -150,35 +150,34 @@ u.map('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
 u.map('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
 
 -- Source init.lua
--- vim.api.nvim_set_keymap('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 u.map('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 
 -- Moving around
-vim.api.nvim_set_keymap('n', '<leader>h', '<cmd> wincmd h<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>j', '<cmd> wincmd j<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>k', '<cmd> wincmd k<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>l', '<cmd> wincmd l<CR>', { noremap = true })
+u.map('n', '<leader>h', '<cmd> wincmd h<CR>', { noremap = true })
+u.map('n', '<leader>j', '<cmd> wincmd j<CR>', { noremap = true })
+u.map('n', '<leader>k', '<cmd> wincmd k<CR>', { noremap = true })
+u.map('n', '<leader>l', '<cmd> wincmd l<CR>', { noremap = true })
 
 -- Resize buffer
-vim.api.nvim_set_keymap('n', '<leader>+', '<cmd> vertical resize +5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent = true })
+u.map('n', '<leader>+', '<cmd> vertical resize +5<CR>', { noremap = true, silent = true })
+u.map('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent = true })
 
 -- Moving around buffer tabs
-vim.api.nvim_set_keymap('n', '<leader><tab>', '<cmd> tabn<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = true })
+u.map('n', '<leader><tab>', '<cmd> tabn<CR>', { noremap = true })
+u.map('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = true })
 
 -- Toggle NERDTree
-vim.api.nvim_set_keymap('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
+u.map('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
 vim.g.NERDTreeShowHidden = 1
 
 -- Remap for dealing with word wrap
-vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+u.map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+u.map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 -- Yank from clipboard
-vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true })
-vim.api.nvim_set_keymap('v', '<leader>p', '"+p', { noremap = true })
-vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true })
+u.map('n', '<leader>p', '"+p', { noremap = true })
+u.map('v', '<leader>p', '"+p', { noremap = true })
+u.map('v', '<leader>y', '"+y', { noremap = true })
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -192,7 +191,7 @@ vim.api.nvim_exec(
 )
 
 -- Y yank until the end of line  (note: this is now a default on master)
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+u.map('n', 'Y', 'y$', { noremap = true })
 
 --Map blankline
 vim.g.indent_blankline_char = '┊'
@@ -226,12 +225,12 @@ require('telescope').setup {
 }
 
 --Add leader shortcuts
-vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
+u.map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
