@@ -109,7 +109,7 @@ vim.cmd [[colorscheme gruvbox]]
 
 --Set statusbar
 vim.g.lightline = {
-  colorscheme = 'moonfly',
+  colorscheme = 'gruvbox',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
   component_function = { gitbranch = 'fugitive#head' },
 }
