@@ -418,14 +418,14 @@ for _, lsp in ipairs(servers) do
       end,
       capabilities = capabilities
     }
-  elseif nvim_lsp[lsp] == 'null-ls' then
-    nvim_lsp[lsp].setup {
-      on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-      end,
-      capabilities = capabilities,
-    }
+  -- elseif nvim_lsp[lsp] == 'null-ls' then
+  --   nvim_lsp[lsp].setup {
+  --     on_attach = function(client)
+  --       client.resolved_capabilities.document_formatting = false
+  --       client.resolved_capabilities.document_range_formatting = false
+  --     end,
+  --     capabilities = capabilities,
+  --   }
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
