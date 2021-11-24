@@ -46,7 +46,7 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
 	-- Nerdtree
 	use 'preservim/nerdtree'
-	-- Formatting 
+	-- Formatting
 	use { 'prettier/vim-prettier', run = 'yarn install' }
 	use({ "jose-elias-alvarez/null-ls.nvim",
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
@@ -175,7 +175,7 @@ vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = false
 
-local NERDTreeShowHidden = 1 
+local NERDTreeShowHidden = 1
 
 -- Gitsigns
 require('gitsigns').setup {
@@ -260,6 +260,24 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-- Add Lua language-server
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+else
+  print("Unsupported system by sumneko_lua")
+end
+
+local HOME = vim.fn.expand("$HOME")
+local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server'
+local sumneko_binary_path = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
+
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
 -- LSP settings
 local nvim_lsp = require 'lspconfig'
 local on_attach = function(_, bufnr)
@@ -293,18 +311,46 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local null_ls = require "null-ls"
 
 local sources = {
-  null_ls.builtins.diagnostics.eslint_d, 
-  null_ls.builtins.code_actions.eslint_d,
-  null_ls.builtins.formatting.prettier
+  null_ls.builtins.diagnostics.eslint_d.with({
+    prefer_local = "node_modules/.bin",
+  }),
+  null_ls.builtins.code_actions.eslint_d.with({
+    prefer_local = "node_modules/.bin"
+  }),
+  null_ls.builtins.formatting.prettier,
 }
 
 null_ls.config({ sources = sources, debug = true })
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
-  if lsp == 'tsserver' then
-
+  if lsp == 'sumneko_lua' then
+    nvim_lsp.sumneko_lua.setup {
+      "error",
+      cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+            path = runtime_path,
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+      on_attach = on_attach,
+      capabilities = capabilities
+    }
+  elseif lsp == 'tsserver' then
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
       -- it from the source if you want to add your own init_options.
@@ -331,40 +377,12 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
         -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fo', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>', opts)
 
         local ts_utils = require("nvim-lsp-ts-utils")
         -- defaults
-        ts_utils.setup({
-            debug = false,
-            disable_commands = false,
-            enable_import_on_completion = false,
-
-            -- import all
-            import_all_timeout = 5000, -- ms
-            -- lower numbers = higher priority
-            import_all_priorities = {
-                same_file = 1, -- add to existing import statement
-                local_files = 2, -- git files or files with relative path markers
-                buffer_content = 3, -- loaded buffer content
-                buffers = 4, -- loaded buffer names
-            },
-            import_all_scan_buffers = 100,
-            import_all_select_source = false,
-
-            -- filter diagnostics
-            filter_out_diagnostics_by_severity = {},
-            filter_out_diagnostics_by_code = {},
-
-            -- inlay hints
-            auto_inlay_hints = true,
-            inlay_hints_highlight = "Comment",
-
-            -- update imports on file move
-            update_imports_on_move = false,
-            require_confirmation_on_move = false,
-            watch_dir = nil,
-        })
+        ts_utils.setup({})
         -- required to fix code action ranges and filter diagnostics
         ts_utils.setup_client(client)
 
@@ -375,7 +393,15 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
       end,
       capabilities = capabilities
-    } 
+    }
+  elseif nvim_lsp[lsp] == 'null-ls' then
+    nvim_lsp[lsp].setup {
+      on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+      end,
+      capabilities = capabilities,
+    }
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
