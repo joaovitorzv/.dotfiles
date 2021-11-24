@@ -200,6 +200,7 @@ vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = false
 
+local NERDTreeShowHidden = 1
 
 -- Gitsigns
 require('gitsigns').setup {
