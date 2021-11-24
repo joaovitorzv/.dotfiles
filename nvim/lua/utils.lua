@@ -10,7 +10,7 @@ end
 
 local M = {}
 
-M.command = function (mode, keymap, source, opts)
+M.map = function (mode, keymap, source, opts)
   api.nvim_set_keymap(mode, keymap, source, get_options(opts))
 end
 
