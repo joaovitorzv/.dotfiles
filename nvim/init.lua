@@ -105,7 +105,7 @@ vim.o.scrolloff = 8
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 -- vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme moonfly]]
+vim.cmd [[colorscheme gruvbox]]
 
 --Set statusbar
 vim.g.lightline = {
