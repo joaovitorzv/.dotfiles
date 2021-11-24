@@ -151,7 +151,7 @@ vim.api.nvim_set_keymap('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
 
 -- Source init.lua
 -- vim.api.nvim_set_keymap('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
-M
+u.command('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 
 
 -- Moving around
