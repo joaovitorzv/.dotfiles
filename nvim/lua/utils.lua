@@ -1,7 +1,5 @@
 local api = vim.api
 
-local M = {}
-
 local get_options = function (custom_opts)
   local options = { noremap: true, silent: true }
   if custom_opts then
@@ -10,6 +8,8 @@ local get_options = function (custom_opts)
   print(vim.inspect(options))
   return options
 end
+
+local M = {}
 
 M.command = function (mode, target, source, opts)
   api.nvim_set_keymap(mode, target, source, get_options(opts)) 
