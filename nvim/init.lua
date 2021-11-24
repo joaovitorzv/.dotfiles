@@ -302,9 +302,10 @@ for _, lsp in ipairs(servers) do
         ts_utils.setup_client(client)
 
         -- no default maps, so you may want to define some here
-        t.buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
-        t.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
-        t.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
+        local tsopts = { silent = true }
+        u.buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
+        u.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
+        u.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
       end,
       capabilities = capabilities
     }
