@@ -152,6 +152,8 @@ vim.api.nvim_set_keymap('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
 -- Source init.lua
 vim.api.nvim_set_keymap('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 
+
+
 -- Moving around
 vim.api.nvim_set_keymap('n', '<leader>h', '<cmd> wincmd h<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>j', '<cmd> wincmd j<CR>', { noremap = true })
