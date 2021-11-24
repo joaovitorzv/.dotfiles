@@ -68,7 +68,108 @@ end
 
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
-_G.packer_plugins = {}
+_G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/LuaSnip"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lightline.vim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nerdtree"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-moonfly-colors"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors"
+  },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-prettier"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-surround"
+  }
+}
 
 time([[Defining packer_plugins]], false)
 if should_profile then save_profiles() end
