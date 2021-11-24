@@ -12,5 +12,5 @@ local get_options = function (custom_opts)
 end
 
 M.command = function (mode, target, source, opts)
-  api.nvim_set_keymap(mode, ) 
+  api.nvim_set_keymap(mode, target, source, get_options(opts)) 
 end
