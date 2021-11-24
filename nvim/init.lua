@@ -268,10 +268,11 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     }
   elseif lsp == 'tsserver' then
+    local ts_utils = require("nvim-lsp-ts-utils")
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
       -- it from the source if you want to add your own init_options.
-      init_options = require("nvim-lsp-ts-utils").init_options,
+      init_options = ts_utils.init_options,
       on_attach = function(client, bufnr)
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -295,7 +296,6 @@ for _, lsp in ipairs(servers) do
         u.buf_map(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
         u.buf_map(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-        local ts_utils = require("nvim-lsp-ts-utils")
         -- defaults
         ts_utils.setup({})
         -- required to fix code action ranges and filter diagnostics
