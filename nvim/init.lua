@@ -145,9 +145,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Quit, Save & Quit
-vim.api.nvim_set_keymap('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
+u.map('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
+u.map('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
+u.map('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
 
 -- Source init.lua
 -- vim.api.nvim_set_keymap('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
