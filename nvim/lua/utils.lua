@@ -12,7 +12,7 @@ end
 local M = {}
 
 M.command = function (mode, keymap, source, opts)
-  print(vim.inspect(mode, keymap, source, opts))
+  print(vim.inspect(source))
   api.nvim_set_keymap(mode, keymap, source, get_options(opts))
 end
 
