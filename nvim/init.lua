@@ -298,7 +298,7 @@ local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities 
   }
 end
 -- for _, lsp in ipairs(servers) do
