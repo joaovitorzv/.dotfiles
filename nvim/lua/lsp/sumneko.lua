@@ -10,7 +10,7 @@ else
   print("Unsupported system by sumneko_lua")
 end
 
-local HOME = vin.fn.expand("$HOME")
+local HOME = vim.fn.expand("$HOME")
 local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server' 
 local sumneko_binary_path = sumneko_root_path .. '/bin' .. system_name .. 'lua-language-server'
 
