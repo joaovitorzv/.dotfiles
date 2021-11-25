@@ -1,4 +1,4 @@
-local u = require(utils)
+local u = require('utils')
 local lspconfig = require("lspconfig")
 
 local system_name
