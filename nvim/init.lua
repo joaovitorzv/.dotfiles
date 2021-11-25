@@ -296,7 +296,7 @@ null_ls.config({ sources = sources, debug = true })
 -- Enable the following language servers
 local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
-  if lsp == 'sumneko_lua' then
+  if lsp == 'sumneko_luaa' then
     nvim_lsp.sumneko_lua.setup {
       "error",
       cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
