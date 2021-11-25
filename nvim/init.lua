@@ -294,7 +294,7 @@ local sources = {
 null_ls.config({ sources = sources, debug = true })
 
 -- Enable the following language servers
-local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls'  }
+local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
 --   if lsp == 'sumneko_lua' then
 --     nvim_lsp.sumneko_lua.setup {
@@ -321,47 +321,47 @@ for _, lsp in ipairs(servers) do
 --       on_attach = on_attach,
 --       capabilities = capabilities
 --     }
---   elseif lsp == 'tsserver' then
---     local ts_utils = require("nvim-lsp-ts-utils")
---     nvim_lsp.tsserver.setup {
---       -- Needed for inlayHints. Merge this table with your settings or copy
---       -- it from the source if you want to add your own init_options.
---       init_options = ts_utils.init_options,
---       on_attach = function(client, bufnr)
---         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+ if lsp == 'tsserver' then
+    local ts_utils = require("nvim-lsp-ts-utils")
+    nvim_lsp.tsserver.setup {
+      -- Needed for inlayHints. Merge this table with your settings or copy
+      -- it from the source if you want to add your own init_options.
+      init_options = ts_utils.init_options,
+      on_attach = function(client, bufnr)
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
---         u.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', nil)
---         u.buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', nil)
---         u.buf_map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', nil)
---         u.buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', nil)
---         u.buf_map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', nil)
---         u.buf_map(bufnr, 'v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', nil)
---         u.buf_map(bufnr, 'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', nil)
---         u.buf_map(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', nil)
---         u.buf_map(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.formatting()<CR>', nil)
+        u.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', nil)
+        u.buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', nil)
+        u.buf_map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', nil)
+        u.buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', nil)
+        u.buf_map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', nil)
+        u.buf_map(bufnr, 'v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', nil)
+        u.buf_map(bufnr, 'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', nil)
+        u.buf_map(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', nil)
+        u.buf_map(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.formatting()<CR>', nil)
 
---         -- defaults
---         ts_utils.setup({})
---         -- required to fix code action ranges and filter diagnostics
---         ts_utils.setup_client(client)
+        -- defaults
+        ts_utils.setup({})
+        -- required to fix code action ranges and filter diagnostics
+        ts_utils.setup_client(client)
 
---         -- no default maps, so you may want to define some here
---         local tsopts = { silent = true }
---         u.buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
---         u.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
---         u.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
---       end,
---       capabilities = capabilities
---     }
+        -- no default maps, so you may want to define some here
+        local tsopts = { silent = true }
+        u.buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>", tsopts)
+        u.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", tsopts)
+        u.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", tsopts)
+      end,
+      capabilities = capabilities
+    }
 --   elseif nvim_lsp[lsp] == 'null-ls' then
 --     nvim_lsp[lsp].setup {
 --       on_attach = function(client, _)
@@ -376,7 +376,7 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities,
     }
   end
--- end
+end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
