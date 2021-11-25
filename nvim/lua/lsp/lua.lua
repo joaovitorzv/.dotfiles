@@ -1,5 +1,5 @@
 local u = require(utils)
-local lspconfig = require(lspconfig)
+local lspconfig = require("lspconfig")
 
 local system_name
 if vim.fn.has("mac") == 1 then
