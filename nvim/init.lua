@@ -376,7 +376,7 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities,
     }
   end
--- end
+end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
