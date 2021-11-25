@@ -296,7 +296,7 @@ null_ls.config({ sources = sources, debug = true })
 -- Enable the following language servers
 local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
-  if lsp == 'sumneko_luaa' then
+  if lsp == 'sumneko_lua' then
     nvim_lsp.sumneko_lua.setup {
       "error",
       cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
@@ -321,7 +321,7 @@ for _, lsp in ipairs(servers) do
       on_attach = on_attach,
       capabilities = capabilities
     }
-  elseif lsp == 'tsserver' then
+  elseif lsp == 'tsserveraa' then
     local ts_utils = require("nvim-lsp-ts-utils")
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
