@@ -10,11 +10,11 @@ end
 
 local M = {}
 
-M.map = function (mode, keymap, source, opts)
+M.map = function(mode, keymap, source, opts)
   api.nvim_set_keymap(mode, keymap, source, get_options(opts))
 end
 
-M.buf_map = function (bufnr, mode, keymap, source, opts)
+M.buf_map = function(bufnr, mode, keymap, source, opts)
   api.nvim_buf_set_keymap(bufnr or 0, mode, keymap, source, get_options(opts))
 end
 
