@@ -18,35 +18,37 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+
+local settings = {
+  Lua = {
+    runtime = { version = "LuaJIT", path = runtime_path },
+    diagnostics = {
+      enable = true,
+      globals = { 
+        "global",
+        "vim",
+        "use",
+        "describe",
+        "it",
+        "assert",
+        "before_each",
+        "after_each",
+      },
+    },
+    workspace = {
+      library = vim.api.nvim_get_runtime_file("", true),
+      checkThirdParty = false,
+    },
+    telemetry = {
+      enable = false,
+    },
+  },
+}
+
 local M = {}
-
-M.config = vim.tbl_extend("error", require("lsp.utils").base_config, {
-	cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
-	settings = {
-		Lua = {
-			runtime = { version = "LuaJIT", path = runtime_path },
-			diagnostics = {
-        enable = true,
-				globals = { 
-          "global",
-          "vim",
-          "use",
-          "describe",
-          "it",
-          "assert",
-          "before_each",
-          "after_each",
-        },
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false,
-			},
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
-})
-
+M.setup = function(on_attach) {
+  lspconfig.sumneko_lua.setup({
+	  cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+  })
+}
 return M
