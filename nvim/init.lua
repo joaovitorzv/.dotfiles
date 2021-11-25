@@ -328,7 +328,6 @@ for _, lsp in ipairs(servers) do
       -- it from the source if you want to add your own init_options.
       init_options = ts_utils.init_options,
       on_attach = function(client, bufnr)
-        print(vim.inspect(client))
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         u.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', nil)
