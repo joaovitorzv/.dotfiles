@@ -294,7 +294,7 @@ local sources = {
 null_ls.config({ sources = sources, debug = true })
 
 -- Enable the following language servers
-local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
+local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls'  }
 for _, lsp in ipairs(servers) do
 --   if lsp == 'sumneko_lua' then
 --     nvim_lsp.sumneko_lua.setup {
