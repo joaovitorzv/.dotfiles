@@ -26,7 +26,17 @@ M.config = vim.tbl_extend("error", require("lsp.utils").base_config, {
 		Lua = {
 			runtime = { version = "LuaJIT", path = runtime_path },
 			diagnostics = {
-				globals = { "vim" },
+        enable = true,
+				globals = { 
+          "global",
+          "vim",
+          "use",
+          "describe",
+          "it",
+          "assert",
+          "before_each",
+          "after_each",
+        },
 			},
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true),
