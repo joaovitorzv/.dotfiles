@@ -350,6 +350,7 @@ for _, lsp in ipairs(servers) do
         u.buf_map(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', nil)
         u.buf_map(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.formatting()<CR>', nil)
 
+        print(vim.inspect(client))
         -- defaults
         ts_utils.setup({})
         -- required to fix code action ranges and filter diagnostics
@@ -363,14 +364,14 @@ for _, lsp in ipairs(servers) do
       end,
       capabilities = capabilities
     }
-  -- elseif nvim_lsp[lsp] == 'null-ls' then
-  --   nvim_lsp[lsp].setup {
-  --     on_attach = function(client, _)
-  --       client.resolved_capabilities.document_formatting = false
-  --       client.resolved_capabilities.document_range_formatting = false
-  --     end,
-  --     capabilities = capabilities,
-  --   }
+  elseif nvim_lsp[lsp] == 'null-ls' then
+    nvim_lsp[lsp].setup {
+      on_attach = function(client, _)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+      end,
+      capabilities = capabilities,
+    }
   else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
