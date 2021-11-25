@@ -322,7 +322,6 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities
     }
   elseif lsp == 'tsserver' then
-    print(vim.inspect(lsp))
     local ts_utils = require("nvim-lsp-ts-utils")
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
