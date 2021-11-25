@@ -117,7 +117,6 @@ vim.g.NERDTreeShowHidden = 1
 u.map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 u.map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
-
 -- Non-volatile paste
 u.map('n', '<S-p>', '"0p', nil)
 -- Yank from clipboard
