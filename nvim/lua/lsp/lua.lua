@@ -1,42 +1,45 @@
--- local system_name
--- if vim.fn.has("mac") == 1 then
---   system_name = "macOS"
--- elseif vim.fn.has("linux") == 1 then
---   system_name = "Linux"
--- else 
---   print("Unsupported system by sumneko_lua")
--- end
+local u = require(utils)
+local lspconfig = require(lspconfig)
 
--- local HOME = vin.fn.expand("$HOME")
--- local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server' 
--- local sumneko_binary_path = sumneko_root_path .. '/bin' .. system_name .. 'lua-language-server'
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS quando eu tiver? kkkk pq eu to fazendo isso meu deus preciso de um empregi"
+elseif vim.fn.has("linux") == 1 then
+  system_name = "Linux"
+else 
+  print("Unsupported system by sumneko_lua")
+end
 
--- local runtime_path = vim.split(package.path, ";")
--- table.insert(runtime_path, "lua/?.lua")
--- table.insert(runtime_path, "lua/?/init.lua")
+local HOME = vin.fn.expand("$HOME")
+local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server' 
+local sumneko_binary_path = sumneko_root_path .. '/bin' .. system_name .. 'lua-language-server'
 
--- local M = {}
+local runtime_path = vim.split(package.path, ";")
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
--- M.config = vim.tbl_extend("error", require("lsp.utils").base_config, {
--- 	cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
--- 	settings = {
--- 		Lua = {
--- 			runtime = {
--- 				version = "LuaJIT",
--- 				path = runtime_path,
--- 			},
--- 			diagnostics = {
--- 				globals = { "vim" },
--- 			},
--- 			workspace = {
--- 				library = vim.api.nvim_get_runtime_file("", true),
--- 				checkThirdParty = false,
--- 			},
--- 			telemetry = {
--- 				enable = false,
--- 			},
--- 		},
--- 	},
--- })
+local M = {}
 
--- return M
+M.config = vim.tbl_extend("error", require("lsp.utils").base_config, {
+	cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+				path = runtime_path,
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+
+return M
