@@ -24,10 +24,7 @@ M.config = vim.tbl_extend("error", require("lsp.utils").base_config, {
 	cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
 	settings = {
 		Lua = {
-			runtime = {
-				version = "LuaJIT",
-				path = runtime_path,
-			},
+			runtime = { version = "LuaJIT", path = runtime_path },
 			diagnostics = {
 				globals = { "vim" },
 			},
