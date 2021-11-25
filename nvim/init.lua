@@ -321,7 +321,7 @@ for _, lsp in ipairs(servers) do
       on_attach = on_attach,
       capabilities = capabilities
     }
-  elseif lsp == 'tsserveraa' then
+  elseif lsp == 'tsserver' then
     local ts_utils = require("nvim-lsp-ts-utils")
     nvim_lsp.tsserver.setup {
       -- Needed for inlayHints. Merge this table with your settings or copy
