@@ -48,9 +48,11 @@ local M = {}
 M.setup = function(on_attach)
   lspconfig.sumneko_lua.setup({
     on_attach = function(client, bufnr) 
-      cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
-      settings = settings
-    end
+      on_attach(client, bufnr) 
+    end,
+
+    cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+    settings = settings
   })
 end
 return M
