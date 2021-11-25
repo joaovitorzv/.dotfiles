@@ -16,7 +16,6 @@ end
 
 M.buf_map = function (bufnr, mode, keymap, source, opts)
   vim.api.nvim_buf_set_keymap(bufnr or 0, mode, keymap, source, get_options(opts))
-  print(vim.inspect(api.nvim_set_buf_keymap()))
 end
 
 return M
