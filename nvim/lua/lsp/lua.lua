@@ -55,4 +55,5 @@ M.setup = function(on_attach)
     settings = settings
   })
 end
+
 return M
