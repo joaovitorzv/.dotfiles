@@ -296,12 +296,6 @@ null_ls.config({ sources = sources, debug = true })
 -- Enable the following language servers
 local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities 
-  }
-end
--- for _, lsp in ipairs(servers) do
 --   if lsp == 'sumneko_lua' then
 --     nvim_lsp.sumneko_lua.setup {
 --       "error",
@@ -377,11 +371,11 @@ end
 --       capabilities = capabilities,
 --     }
 --   else
---     nvim_lsp[lsp].setup {
---       on_attach = on_attach,
---       capabilities = capabilities,
---     }
---   end
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  end
 -- end
 
 -- Set completeopt to have a better completion experience
