@@ -51,7 +51,6 @@ M.setup = function(on_attach, capabilities)
       on_attach(client, bufnr) 
     end,
 
-
     cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
     settings = settings
   })
