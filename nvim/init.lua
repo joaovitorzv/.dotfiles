@@ -370,7 +370,7 @@ for _, lsp in ipairs(servers) do
 --       end,
 --       capabilities = capabilities,
 --     }
---   else
+  else
     nvim_lsp[lsp].setup {
       on_attach = on_attach,
       capabilities = capabilities,
