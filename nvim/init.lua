@@ -293,7 +293,7 @@ local sources = {
 
 null_ls.config({ sources = sources, debug = true })
 
-require('lsp')
+require("lsp")
 -- Enable the following language servers
 local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
