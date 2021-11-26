@@ -1,7 +1,14 @@
--- LSP settings
-local lspconfig = require 'lspconfig'
+local u = require('utils')
+local cmp = require('cmp_nvim_lsp') 
+
 local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  if client.resolved_capabilities.completion then  
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  end
+
+  if client.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end
 
   u.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', nil)
   u.buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', nil)
@@ -24,6 +31,6 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = cmp.update_capabilities(capabilities)
 
-require("lsp.sumneko").setup(on_attach, capabilities)
+local sumneko = require("lsp.sumneko").setup(on_attach, capabilities)

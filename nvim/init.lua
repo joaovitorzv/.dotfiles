@@ -51,36 +51,7 @@ vim.o.termguicolors = true
 -- vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme gruvbox]]
 
---Set statusbar
-require'lualine'.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff',
-                  {'diagnostics', sources={'nvim_lsp'}}},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = {}
-}
+require('plugins')
 
 --Remap space as leader key
 u.map('', '<Space>', '<Nop>', { noremap = true, silent = true })
@@ -106,8 +77,8 @@ u.map('n', '<leader>+', '<cmd> vertical resize +5<CR>', { noremap = true, silent
 u.map('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent = true })
 
 -- Moving around buffer tabs
-u.map('n', '<leader><tab>', '<cmd> tabn<CR>', { noremap = true })
-u.map('n', '<leader><s-tab>', '<cmd> tabn<CR>', { noremap = true })
+u.map('n', '<leader>1', '<cmd> tabN<CR>', nil)
+u.map('n', '<leader>2', '<cmd> tabn<CR>', nil)
 
 -- Toggle NERDTree
 u.map('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
@@ -138,37 +109,6 @@ vim.api.nvim_exec(
 -- Y yank until the end of line  (note: this is now a default on master)
 u.map('n', 'Y', 'y$', { noremap = true })
 
---Map blankline
-vim.g.indent_blankline_char = '┊'
-vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
-vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
-vim.g.indent_blankline_char_highlight = 'LineNr'
-vim.g.indent_blankline_show_trailing_blankline_indent = false
-vim.g.indent_blankline_show_first_indent_level = false
-
--- Gitsigns
-require('gitsigns').setup {
-  signs = {
-    add = { hl = 'GitGutterAdd', text = '+' },
-    change = { hl = 'GitGutterChange', text = '~' },
-    delete = { hl = 'GitGutterDelete', text = '_' },
-    topdelete = { hl = 'GitGutterDelete', text = '‾' },
-    changedelete = { hl = 'GitGutterChange', text = '~' },
-  },
-}
-
--- Telescope
-require('telescope').setup {
-  defaults = {
-    mppings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
-    },
-  },
-}
-
 --Add leader shortcuts
 u.map('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 u.map('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
@@ -176,78 +116,6 @@ u.map('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_
 u.map('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
 u.map('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 u.map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
-
--- require('plugins')
--- Treesitter configuration
--- Parsers must be installed manually via :TSInstall
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true, -- false will disable the whole extension
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = 'gnn',
-      node_incremental = 'grn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm',
-    },
-  },
-  indent = {
-    enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
-      },
-      goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
-      },
-      goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
-      },
-      goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
-      },
-    },
-  },
-}
-
--- Add Lua language-server
-local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
-else
-  print("Unsupported system by sumneko_lua")
-end
-
-local HOME = vim.fn.expand("$HOME")
-local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server'
-local sumneko_binary_path = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
-
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
 
 -- LSP settings
 local nvim_lsp = require 'lspconfig'
@@ -293,35 +161,20 @@ local sources = {
 
 null_ls.config({ sources = sources, debug = true })
 
-require("lsp")
+local modules = { "lsp" }
+for _, module in ipairs(modules) do
+  local module_ok = pcall(require, module)
+  
+  if not module_ok then
+    print(vim.inspect('failed to load "' .. module .. '" inside lsp.init'))
+  else
+    print(vim.inspect('successfuly loaded ' .. module))
+  end
+end
+
 -- Enable the following language servers
 local servers = { 'pyright', 'tsserver', 'bashls', 'null-ls' }
 for _, lsp in ipairs(servers) do
---   if lsp == 'sumneko_lua' then
---     nvim_lsp.sumneko_lua.setup {
---       "error",
---       cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
---       settings = {
---         Lua = {
---           runtime = {
---             version = "LuaJIT",
---             path = runtime_path,
---           },
---           diagnostics = {
---             globals = { "vim" },
---           },
---           workspace = {
---             library = vim.api.nvim_get_runtime_file("", true),
---             checkThirdParty = false,
---           },
---           telemetry = {
---             enable = false,
---           },
---         },
---       },
---       on_attach = on_attach,
---       capabilities = capabilities
---     }
  if lsp == 'tsserver' then
     local ts_utils = require("nvim-lsp-ts-utils")
     nvim_lsp.tsserver.setup {
@@ -382,49 +235,4 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- luasnip setup
-local luasnip = require 'luasnip'
 
--- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
