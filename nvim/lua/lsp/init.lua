@@ -1,8 +1,8 @@
 local u = require('utils')
-local cmp = require('cmp_nvim_lsp') 
+local cmp = require('cmp_nvim_lsp')
 
 local on_attach = function(client, bufnr)
-  if client.resolved_capabilities.completion then  
+  if client.resolved_capabilities.completion then
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   end
 
@@ -33,4 +33,8 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp.update_capabilities(capabilities)
 
-local sumneko = require("lsp.sumneko").setup(on_attach, capabilities)
+require("lsp.sumneko").setup(on_attach)
+require("lsp.tsserver").setup(on_attach)
+require("lsp.pyright").setup(on_attach)
+require("lsp.null-ls").setup(on_attach)
+require("lsp.bashls").setup(on_attach)

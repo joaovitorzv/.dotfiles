@@ -1,18 +1,15 @@
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+  packer_bootstrap = vim.fn.system({'!git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
-vim.api.nvim_exec(
-  [[
-  augroup Packer
+vim.cmd([[
+  augroup packer_user_config
     autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+    autocmd BufWritePost plugins/init.lua source <afile> | PackerCompile
   augroup end
-]],
-  false
-)
+]])
 
 require('packer').startup(function()
   use('wbthomason/packer.nvim') -- Package manager
@@ -22,7 +19,6 @@ require('packer').startup(function()
   end
 
   local use_with_config = function(path, name)
-    print(vim.inspect({path, config(name)}))
     use({path, config = config(name)})
   end
 
@@ -36,8 +32,7 @@ require('packer').startup(function()
     config = config('telescope')
   })
   use({'bluz71/vim-moonfly-colors'})
-  use({'/morhetz/gruvbox'})
-  use({'itchyny/lightline.vim'}) -- Fancier statusline
+  use('morhetz/gruvbox')
   use({
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -75,4 +70,8 @@ require('packer').startup(function()
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
   use({'jose-elias-alvarez/nvim-lsp-ts-utils'})
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

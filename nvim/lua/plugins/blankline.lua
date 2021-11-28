@@ -1,3 +1,4 @@
+print(vim.inspect('caiu'))
 require("indent_blankline").setup {
   filetype_exclude = { 'help', 'packer' },
   buftype_exclude = { 'terminal', 'nofile' },

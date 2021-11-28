@@ -71,117 +71,133 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/LuaSnip"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["gitsigns.nvim"] = {
     config = { "require('plugins.gitsigns')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   gruvbox = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["indent-blankline.nvim"] = {
     config = { "require('plugins.blankline')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
-  },
-  ["lightline.vim"] = {
-    loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lightline.vim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
     config = { "require('plugins.lualine')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nerdtree = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nerdtree"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/null-ls.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     config = { "require('plugins.cmp')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-ts-utils"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils",
+    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     config = { "require('plugins.treesitter')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     config = { "require('plugins.telescope')" },
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-moonfly-colors"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-prettier"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-prettier"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
   },
   ["vim-rhubarb"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require('plugins.blankline')
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('plugins.cmp')
@@ -190,6 +206,14 @@ time([[Config for nvim-cmp]], false)
 time([[Config for gitsigns.nvim]], true)
 require('plugins.gitsigns')
 time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('plugins.blankline')
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('plugins.telescope')
@@ -198,10 +222,6 @@ time([[Config for telescope.nvim]], false)
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
 if should_profile then save_profiles() end
 
 end)

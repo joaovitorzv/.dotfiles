@@ -11,7 +11,7 @@ else
 end
 
 local HOME = vim.fn.expand("$HOME")
-local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server' 
+local sumneko_root_path = HOME .. '/.config/nvim/lua-language-server'
 local sumneko_binary_path = sumneko_root_path .. '/bin/' .. system_name .. '/lua-language-server'
 
 local runtime_path = vim.split(package.path, ";")
@@ -45,15 +45,14 @@ local settings = {
 }
 
 local M = {}
-M.setup = function(on_attach, capabilities)
+M.setup = function(on_attach)
   lspconfig.sumneko_lua.setup({
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
     end,
-    capabilities = capabilities,
     cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
     settings = settings,
-  }) 
+  })
 end
 
 return M
