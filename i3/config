@@ -13,7 +13,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id redshift
 exec redshift
 exec alsactl --file ~/.config/asound.state restore
-exec --no-startup-id  ~/.config/polybar/launch.sh --forest
+exec --no-startup-id polybar -q jao -c $HOME/.config/polybar/mybar/config.ini 
 # exec gitwatch -r origin -b main -m 'gitwatch got something for us' ~/dotfiles
 
 # window title
@@ -163,8 +163,8 @@ bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+q workspace number $ws9
+bindsym $mod+10 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
