@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  packer_bootstrap = vim.fn.system({'!git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+  packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 vim.cmd([[
@@ -31,7 +31,6 @@ require('packer').startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = config('telescope')
   })
-  use({'bluz71/vim-moonfly-colors'})
   use('morhetz/gruvbox')
   use({
     'nvim-lualine/lualine.nvim',
@@ -39,7 +38,6 @@ require('packer').startup(function()
     config = config('lualine'),
   })
   -- Add indentation guides even on blank lines
-  -- use_with_config("lukas-reineke/indent-blankline.nvim", "blankline")
   use_with_config("lukas-reineke/indent-blankline.nvim", "blankline")
   -- Add git related info in the signs columns and popups
   use({
@@ -63,6 +61,7 @@ require('packer').startup(function()
   -- Surround
   use({'tpope/vim-surround'})
 	-- Nerdtree
+  use({'kyazdani42/nvim-tree.lua'})
 	use({'preservim/nerdtree'})
 	-- Formatting
 	use({ 'prettier/vim-prettier', run = 'yarn install' })
@@ -70,6 +69,11 @@ require('packer').startup(function()
     requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
   })
   use({'jose-elias-alvarez/nvim-lsp-ts-utils'})
+
+  use({'ap/vim-css-color'}) -- Css color highlight
+  use({'editorconfig/editorconfig-vim'}) -- Editor config support
+  use({'arjunmahishi/run-code.nvim'}) -- Run codeblock
+
 
   if packer_bootstrap then
     require('packer').sync()

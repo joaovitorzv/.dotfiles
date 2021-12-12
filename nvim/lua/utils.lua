@@ -18,4 +18,12 @@ M.buf_map = function(bufnr, mode, keymap, source, opts)
   vim.api.nvim_buf_set_keymap(bufnr or 0, mode, keymap, source, get_options(opts))
 end
 
+M.command = function(name, fn)
+    vim.cmd(string.format("command! %s %s", name, fn))
+end
+
+M.lua_command = function(name, fn)
+    M.command(name, "lua " .. fn)
+end
+
 return M

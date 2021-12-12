@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["editorconfig-vim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
+    url = "https://github.com/editorconfig/editorconfig-vim"
+  },
   ["gitsigns.nvim"] = {
     config = { "require('plugins.gitsigns')" },
     loaded = true,
@@ -159,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["run-code.nvim"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/run-code.nvim",
+    url = "https://github.com/arjunmahishi/run-code.nvim"
+  },
   ["telescope.nvim"] = {
     config = { "require('plugins.telescope')" },
     loaded = true,
@@ -170,15 +180,15 @@ _G.packer_plugins = {
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-moonfly-colors"] = {
-    loaded = true,
-    path = "/home/joao/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-prettier"] = {
     loaded = true,
@@ -198,18 +208,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('plugins.cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('plugins.gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('plugins.treesitter')
-time([[Config for nvim-treesitter]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 require('plugins.blankline')
@@ -222,6 +220,18 @@ time([[Config for telescope.nvim]], false)
 time([[Config for lualine.nvim]], true)
 require('plugins.lualine')
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins.cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('plugins.treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.gitsigns')
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

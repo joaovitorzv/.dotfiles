@@ -23,7 +23,7 @@ local settings = {
     runtime = { version = "LuaJIT", path = runtime_path },
     diagnostics = {
       enable = true,
-      globals = { 
+      globals = {
         "global",
         "vim",
         "use",

@@ -45,7 +45,8 @@ vim.g.maplocalleader = ' '
 u.map('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
 u.map('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
 u.map('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
--- Source init.lua
+-- Source config 
+u.map('n', '<leader>,', '<cmd>so ~/dotfiles/nvim/lua/plugins/init.lua<CR>', { noremap = true })
 u.map('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 -- Moving around
 u.map('n', '<leader>h', '<cmd> wincmd h<CR>', { noremap = true })
@@ -59,7 +60,8 @@ u.map('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent
 u.map('n', '<leader>1', '<cmd> tabN<CR>', nil)
 u.map('n', '<leader>2', '<cmd> tabn<CR>', nil)
 -- Toggle NERDTree
-u.map('n', '<leader>t', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
+u.map('n', '<leader>t', '<cmd> :NERDTreeFind<CR>', { noremap = true })
+u.map('n', '<leader>T', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
 vim.g.NERDTreeShowHidden = 1
 -- Remap for dealing with word wrap
 u.map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
