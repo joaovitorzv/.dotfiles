@@ -1,13 +1,62 @@
 local u = require('utils')
 local cmp = require('cmp_nvim_lsp')
 
+local lsp = vim.lsp
+local api = vim.api
+
+local border_opts = { border = "single", focusable = false, scope = "line" }
+
+vim.diagnostic.config({ virtual_text = false, float = border_opts })
+
+lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, border_opts)
+lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, border_opts)
+
+-- use lsp formatting if it's available (and if it's good)
+-- otherwise, fall back to null-ls
+local preferred_formatting_clients = { "eslint_d" }
+local fallback_formatting_client = "null-ls"
+
+local formatting = function()
+    local bufnr = api.nvim_get_current_buf()
+
+    local selected_client
+    for _, client in ipairs(lsp.get_active_clients()) do
+        if vim.tbl_contains(preferred_formatting_clients, client.name) then
+            selected_client = client
+            break
+        end
+
+        if client.name == fallback_formatting_client then
+            selected_client = client
+        end
+    end
+
+    if not selected_client then
+        return
+    end
+
+    local params = lsp.util.make_formatting_params()
+    local result, err = selected_client.request_sync("textDocument/formatting", params, 5000, bufnr)
+    if result and result.result then
+        lsp.util.apply_text_edits(result.result, bufnr)
+    elseif err then
+        vim.notify("global.lsp.formatting: " .. err, vim.log.levels.WARN)
+    end
+end
+
+global.lsp = {
+    border_opts = border_opts,
+    formatting = formatting,
+}
+
 local on_attach = function(client, bufnr)
   if client.resolved_capabilities.completion then
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   end
 
   if client.resolved_capabilities.document_formatting then
-    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    print(vim.inspect('caiu no '))
+    vim.cmd("autocmd BufWritePre <buffer> lua global.lsp.formatting()")
   end
 
   -- commands
@@ -43,9 +92,14 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp.update_capabilities(capabilities)
 
-require("lsp.null-ls").setup(on_attach)
-require("lsp.sumneko").setup(on_attach)
-require("lsp.tsserver").setup(on_attach)
-require("lsp.pyright").setup(on_attach)
-require("lsp.bashls").setup(on_attach)
-require("lsp.css").setup(on_attach, capabilities)
+for _, servers in ipairs({
+  "bashls",
+  "eslint",
+  "css",
+  "null-ls",
+  "pyright",
+  "sumneko",
+  "tsserver"
+}) do
+  require("lsp." .. servers).setup(on_attach, capabilities)
+end

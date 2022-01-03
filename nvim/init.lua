@@ -1,5 +1,7 @@
 local u = require('utils')
--- Tabs
+
+global = {}
+ -- Tabs
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
@@ -45,7 +47,7 @@ vim.g.maplocalleader = ' '
 u.map('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
 u.map('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
 u.map('n', '<leader>!q', '<cmd> q<CR>', { noremap = true })
--- Source config 
+-- Source config
 u.map('n', '<leader>,', '<cmd>so ~/dotfiles/nvim/lua/plugins/init.lua<CR>', { noremap = true })
 u.map('n', '<leader>up', '<cmd>so ~/dotfiles/nvim/init.lua<CR>', { noremap = true })
 -- Moving around
@@ -84,6 +86,9 @@ vim.api.nvim_exec(
 )
 -- Y yank until the end of line  (note: this is now a default on master)
 u.map('n', 'Y', 'y$', { noremap = true })
+-- Runnning code
+u.map('n', '<leader>rr', '<cmd> RunCodeFile<CR>', nil)
+u.map('v', '<leader>rr', '<cmd> RunCodeSelected<CR>', nil)
 
 require("plugins")
 require("lsp")

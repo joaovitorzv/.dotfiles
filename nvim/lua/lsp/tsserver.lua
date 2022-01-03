@@ -12,15 +12,12 @@ local ts_utils_settings = {
 }
 
 local M = {}
-M.setup = function (on_attach)
+M.setup = function (on_attach, capabilities)
   local ts_utils = require("nvim-lsp-ts-utils")
 
   lspconfig.tsserver.setup({
     init_options = ts_utils.init_options,
     on_attach = function (client, bufnr)
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
-
       on_attach(client, bufnr)
 
       ts_utils.setup(ts_utils_settings)
@@ -30,6 +27,7 @@ M.setup = function (on_attach)
       u.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", nil)
       u.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", nil)
     end,
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }

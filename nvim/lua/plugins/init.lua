@@ -31,7 +31,7 @@ require('packer').startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = config('telescope')
   })
-  use('morhetz/gruvbox')
+  use({'morhetz/gruvbox'})
   use({
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -74,6 +74,7 @@ require('packer').startup(function()
   use({'editorconfig/editorconfig-vim'}) -- Editor config support
   use({'arjunmahishi/run-code.nvim'}) -- Run codeblock
 
+  use({'kyazdani42/nvim-web-devicons'})
 
   if packer_bootstrap then
     require('packer').sync()

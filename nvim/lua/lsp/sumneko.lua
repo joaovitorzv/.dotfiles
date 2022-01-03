@@ -1,4 +1,3 @@
-local u = require("utils")
 local lspconfig = require("lspconfig")
 
 local system_name
@@ -6,7 +5,7 @@ if vim.fn.has("mac") == 1 then
   system_name = "macOS quando eu tiver? kkkk pq eu to fazendo isso meu deus preciso de um empregi"
 elseif vim.fn.has("unix") == 1 then
   system_name = "Linux"
-else 
+else
   print("Unsupported system by sumneko_lua")
 end
 
