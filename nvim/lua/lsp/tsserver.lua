@@ -3,7 +3,7 @@ local lspconfig = require('lspconfig')
 local u = require('utils')
 
 local ts_utils_settings = {
-    -- debug = true,
+    debug = true,
     enable_import_on_completion = true,
     import_all_scan_buffers = 100,
     update_imports_on_move = true,

@@ -14,5 +14,8 @@ require('nvim-treesitter.configs').setup {
     "tsx",
     "typescript",
     "yaml",
+    "graphql",
+    "html",
+    "markdown",
   },
 }

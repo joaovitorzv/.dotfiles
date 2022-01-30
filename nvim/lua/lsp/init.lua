@@ -4,12 +4,7 @@ local cmp = require('cmp_nvim_lsp')
 local lsp = vim.lsp
 local api = vim.api
 
-local border_opts = { border = "single", focusable = false, scope = "line" }
-
-vim.diagnostic.config({ virtual_text = false, float = border_opts })
-
-lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, border_opts)
-lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, border_opts)
+lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help)
 
 -- use lsp formatting if it's available (and if it's good)
 -- otherwise, fall back to null-ls
@@ -45,7 +40,6 @@ local formatting = function()
 end
 
 global.lsp = {
-    border_opts = border_opts,
     formatting = formatting,
 }
 
@@ -55,7 +49,6 @@ local on_attach = function(client, bufnr)
   end
 
   if client.resolved_capabilities.document_formatting then
-    print(vim.inspect('caiu no '))
     vim.cmd("autocmd BufWritePre <buffer> lua global.lsp.formatting()")
   end
 
@@ -71,7 +64,7 @@ local on_attach = function(client, bufnr)
 
   u.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', nil)
   u.buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', nil)
-  u.buf_map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', nil)
+  u.buf_map(bufnr, 'n', 'K', ':LspHover<CR>')
   u.buf_map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', nil)
   u.buf_map(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', nil)
   u.buf_map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', nil)
