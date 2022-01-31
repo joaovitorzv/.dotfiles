@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias py="python3"
+alias python="python3"
 alias push="git push"
 alias v="nvim"
 alias filmin="xrandr --output HDMI-0 --auto --left-of VGA-0"
@@ -36,6 +37,7 @@ alias tvoff="xrandr --output HDMI-0 --off"
 alias dot=" ~/dotfiles "
 alias get="sudo apt-get install "
 alias studio="~/Desktop/android-studio-2020.3.1.26-linux/android-studio/bin/studio.sh" 
+alias rmd="rm -rf "
 
 # Aliases to be used combined
 alias sudo="sudo "

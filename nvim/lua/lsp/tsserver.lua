@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local ts_utils = require("nvim-lsp-ts-utils")
 
 local u = require('utils')
 
@@ -13,9 +14,11 @@ local ts_utils_settings = {
 
 local M = {}
 M.setup = function (on_attach, capabilities)
-  local ts_utils = require("nvim-lsp-ts-utils")
-
-  lspconfig.tsserver.setup({
+  lspconfig["tsserver"].setup({
+    root_dir = function (fname)
+      return lspconfig.util.root_pattern('package.json', 'tsconfig.json', '.git')(fname)
+        or lspconfig.util.path.dirname(fname)
+    end,
     init_options = ts_utils.init_options,
     on_attach = function (client, bufnr)
       on_attach(client, bufnr)
@@ -27,10 +30,10 @@ M.setup = function (on_attach, capabilities)
       u.buf_map(bufnr, "n", "gr", ":TSLspRenameFile<CR>", nil)
       u.buf_map(bufnr, "n", "gi", ":TSLspImportAll<CR>", nil)
     end,
-    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
-    }
+    },
+    capabilities = capabilities,
   })
 end
 

@@ -1,3 +1,4 @@
+vim.notify('fodaseeeeee')
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -51,6 +52,7 @@ require('packer').startup(function()
     run = ':TSUpdate',
     config = config('treesitter'),
   })
+  use({'jiangmiao/auto-pairs'})
   -- Additional textobjects for treesitter
   use({'nvim-treesitter/nvim-treesitter-textobjects'})
   use({'neovim/nvim-lspconfig'}) -- Collection of configurations for built-in LSP client
@@ -75,7 +77,7 @@ require('packer').startup(function()
   use({'arjunmahishi/run-code.nvim'}) -- Run codeblock
 
   use({'kyazdani42/nvim-web-devicons'})
-
+  use({'windwp/nvim-ts-autotag'})
   if packer_bootstrap then
     require('packer').sync()
   end
