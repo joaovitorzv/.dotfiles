@@ -45,6 +45,7 @@ vim.o.completeopt = 'menuone,noselect'
 u.map('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
 -- Quit, Save & Quit
 u.map('n', '<leader>s', '<cmd> w<CR>', { noremap = true })
 u.map('n', '<leader>q', '<cmd> wq<CR>', { noremap = true })
@@ -63,10 +64,10 @@ u.map('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent
 -- Moving around buffer tabs
 u.map('n', '<leader>1', '<cmd> tabN<CR>', nil)
 u.map('n', '<leader>2', '<cmd> tabn<CR>', nil)
--- Toggle NERDTree
-u.map('n', '<leader>t', '<cmd> :NERDTreeFind<CR>', { noremap = true })
-u.map('n', '<leader>T', '<cmd> :NERDTreeToggle<CR>', { noremap = true })
-vim.g.NERDTreeShowHidden = 1
+-- Toggle NvimTree
+u.map('n', '<leader>t', '<cmd> :NvimTreeOpen<CR>', { noremap = true })
+u.map('n', '<leader>T', '<cmd> :NvimTreeClose<CR>', { noremap = true })
+u.map('n', '<S-R>', '<cmd> :NvimTreeRefresh<CR>', { noremap = true })
 -- Remap for dealing with word wrap
 u.map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 u.map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
@@ -91,6 +92,8 @@ u.map('n', 'Y', 'y$', { noremap = true })
 -- Runnning code
 u.map('n', '<leader>rr', '<cmd> RunCodeFile<CR>', nil)
 u.map('v', '<leader>rr', '<cmd> RunCodeSelected<CR>', nil)
+
+vim.g.copilot_no_tab_map = true
 
 require("plugins")
 require("lsp")
