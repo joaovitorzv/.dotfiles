@@ -85,6 +85,7 @@ require('packer').startup(function()
   use({'andweeb/presence.nvim'}) -- Discord rich presence
 
   -- use({'github/copilot.vim'}) -- Copilot
+  use({'kassio/neoterm'}) -- Terminal integrated
 
   if packer_bootstrap then
     require('packer').sync()

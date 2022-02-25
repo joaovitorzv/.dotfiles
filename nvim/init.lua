@@ -65,9 +65,10 @@ u.map('n', '<leader>-', '<cmd> vertical resize -5<CR>', { noremap = true, silent
 u.map('n', '<leader>1', '<cmd> tabN<CR>', nil)
 u.map('n', '<leader>2', '<cmd> tabn<CR>', nil)
 -- Toggle NvimTree
-u.map('n', '<leader>t', '<cmd> :NvimTreeOpen<CR>', { noremap = true })
-u.map('n', '<leader>T', '<cmd> :NvimTreeClose<CR>', { noremap = true })
+u.map('n', 't', '<cmd> :NvimTreeOpen<CR>', { noremap = true })
+u.map('n', 'tt', '<cmd> :NvimTreeClose<CR>', { noremap = true })
 u.map('n', '<S-R>', '<cmd> :NvimTreeRefresh<CR>', { noremap = true })
+u.map('n', '<S-F>', '<cmd> :NvimTreeFindFile<CR>', { noremap = true })
 -- Remap for dealing with word wrap
 u.map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 u.map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
@@ -93,7 +94,12 @@ u.map('n', 'Y', 'y$', { noremap = true })
 u.map('n', '<leader>rr', '<cmd> RunCodeFile<CR>', nil)
 u.map('v', '<leader>rr', '<cmd> RunCodeSelected<CR>', nil)
 
-vim.g.copilot_no_tab_map = true
+-- Neoterm
+u.map('t', '<Esc>', '<C-\\><C-n>', nil)
+u.map('n', '<leader>t', ':bel :Ttoggle<CR> <cmd> wincmd j<CR>', nil)
+vim.g.neoterm_size = 10
+
+-- vim.g.copilot_no_tab_map = true
 
 require("plugins")
 require("lsp")
