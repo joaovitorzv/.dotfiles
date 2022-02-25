@@ -36,8 +36,8 @@ vim.o.wrap = false
 vim.o.scrolloff = 8
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.cmd [[colorscheme gruvbox]]
-vim.cmd [[ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE ]]
+vim.cmd [[colorscheme github_*]]
+-- vim.cmd [[ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE ]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

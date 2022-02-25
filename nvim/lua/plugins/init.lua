@@ -33,6 +33,9 @@ require('packer').startup(function()
     config = config('telescope')
   })
   use({'morhetz/gruvbox'})
+  use({'projekt0n/github-nvim-theme',
+    config = config('theme')
+  })
   use({
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
