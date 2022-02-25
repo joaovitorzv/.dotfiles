@@ -97,7 +97,16 @@ u.map('v', '<leader>rr', '<cmd> RunCodeSelected<CR>', nil)
 -- Neoterm
 u.map('t', '<Esc>', '<C-\\><C-n>', nil)
 u.map('n', '<leader>t', ':bel :Ttoggle<CR> <cmd> wincmd j<CR>', nil)
+
 vim.g.neoterm_size = 10
+
+vim.api.nvim_exec(
+  [[
+    autocmd BufEnter,FocusGained,BufWinEnter,WinEnter * if &buftype == 'terminal' | :startinsert | endif
+    autocmd BufLeave,FocusLost,BufWinLeave,WinLeave * if &buftype == 'terminal' | :stopinsert | endif
+]],
+  false
+)
 
 -- vim.g.copilot_no_tab_map = true
 
