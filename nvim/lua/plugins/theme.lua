@@ -1,5 +1,6 @@
 require'github-theme'.setup {
-  theme_style='dark_default',
+  theme_style='dimmed',
   dark_float = true,
-  sidebars ={"terminal"}
+  sidebars ={"terminal"},
+  function_style = 'italic'
 }
