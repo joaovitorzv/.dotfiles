@@ -32,12 +32,14 @@ alias py="python3"
 alias python="python3"
 alias push="git push"
 alias v="nvim"
+alias c="clear"
 alias filmin="xrandr --output HDMI-0 --auto --left-of VGA-0"
 alias tvoff="xrandr --output HDMI-0 --off"
 alias dot=" ~/dotfiles "
 alias get="sudo apt-get install "
 alias studio="~/Desktop/android-studio-2020.3.1.26-linux/android-studio/bin/studio.sh" 
 alias rmd="rm -rf "
+alias up="sudo apt-get update && sudo apt-get upgrade -y"
 
 # Aliases to be used combined
 alias sudo="sudo "
@@ -45,3 +47,4 @@ alias cd="cd "
 
 alias luamake=/home/joao/dotfiles/lua-language-server/3rd/luamake/luamake
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR=nvim
