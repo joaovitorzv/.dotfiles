@@ -1,4 +1,4 @@
-vim.notify('fodaseeee')
+vim.notify('very kekw fodasee lol lol')
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -26,6 +26,7 @@ require('packer').startup(function()
   use({'tpope/vim-fugitive'}) -- Git commands in nvim
   use({'tpope/vim-rhubarb'}) -- Fugitive-companion to interact with github
   use({'tpope/vim-commentary'}) -- "gc" to comment visual regions/lines
+  use({'tpope/vim-vinegar'})
   -- UI to select things (files, grep results, open buffers...)
   use({
     'nvim-telescope/telescope.nvim',
@@ -36,11 +37,12 @@ require('packer').startup(function()
   use({'projekt0n/github-nvim-theme',
     config = config('theme')
   })
-  use({
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    config = config('lualine'),
-  })
+  -- use({
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  --   config = config('lualine'),
+  -- })
+  use({ 'vim-airline/vim-airline' })
   -- Add indentation guides even on blank lines
   use_with_config("lukas-reineke/indent-blankline.nvim", "blankline")
   -- Add git related info in the signs columns and popups
@@ -65,12 +67,6 @@ require('packer').startup(function()
   use({'L3MON4D3/LuaSnip'}) -- Snippets plugin
   -- Surround
   use({'tpope/vim-surround'})
-	-- --NvimTree
-  use({'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'},
-    config = config('vim-tree')
-  })
-	-- use({'preservim/nerdtree'})
 	-- Formatting
 	use({ 'prettier/vim-prettier', run = 'yarn install' })
 	use({ "jose-elias-alvarez/null-ls.nvim",
@@ -86,6 +82,8 @@ require('packer').startup(function()
   use({'windwp/nvim-ts-autotag'}) -- Close tags
 
   use({'andweeb/presence.nvim'}) -- Discord rich presence
+
+  use({ 'rafamadriz/friendly-snippets' }) -- Yes snippets but friendly
 
   -- use({'github/copilot.vim'}) -- Copilot
   use({'kassio/neoterm'}) -- Terminal integrated

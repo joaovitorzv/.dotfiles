@@ -5,6 +5,14 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
+# Android stuff
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/joao/.oh-my-zsh.sh"
 
