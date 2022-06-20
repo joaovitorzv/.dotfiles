@@ -88,6 +88,15 @@ require('packer').startup(function()
   -- use({'github/copilot.vim'}) -- Copilot
   use({'kassio/neoterm'}) -- Terminal integrated
 
+  use({'nvim-neo-tree/neo-tree.nvim',
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim"
+    },
+    config = config('neotree')
+  })
+
   if packer_bootstrap then
     require('packer').sync()
   end

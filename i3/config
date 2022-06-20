@@ -8,7 +8,7 @@ font pango:Ubuntu Medium 10
 workspace 5 output HDMI-0 
 
 # autostart
-exec brave-browser 
+exec microsoft-edge 
 exec --no-startup-id redshift-gtk
 exec --no-startup-id redshift
 exec redshift
@@ -68,21 +68,24 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec xfce4-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # screenshots 
-bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim | scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+bindsym --release Ctrl+Print exec "scrot -s -q 100 '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f /tmp'"
 
 # turnoff
 bindsym $mod+Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
 # rofi
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+u exec rofi -show run
+bindsym $mod+d exec rofi -i -show drun -modi drun -show-icons
+bindsym $mod+u exec rofi -i -show run -modi drun -show-icons
+
+# rofimoji
+bindsym $mod+m exec rofimoji
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run

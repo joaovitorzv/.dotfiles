@@ -17,7 +17,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export ZSH="/home/joao/.oh-my-zsh.sh"
 
 # ZSH_THEME
-ZSH_THEME="robbyrussell"
+ZSH_THEME="flazz"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -48,6 +48,7 @@ alias get="sudo apt-get install "
 alias studio="~/Desktop/android-studio-2020.3.1.26-linux/android-studio/bin/studio.sh" 
 alias rmd="rm -rf "
 alias up="sudo apt-get update && sudo apt-get upgrade -y"
+alias sch="mit-scheme "
 
 # Aliases to be used combined
 alias sudo="sudo "
